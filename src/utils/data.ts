@@ -31,7 +31,7 @@ export const categories = [
     'Savings & Investments', 
     'Debt Repayment', 
     'Gifts & Donations'
-] as const
+]
 
 /* Color scheme for expense categories */
 export const categoryColors = {

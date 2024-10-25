@@ -1,5 +1,18 @@
 import { z } from "zod"
-import { categories } from "@/utils/data"
+
+const categories = [
+    'Housing',
+    'Transportation', 
+    'Food & Dining', 
+    'Healthcare', 
+    'Personal Care', 
+    'Education', 
+    'Entertainment & Leisure', 
+    'Technology', 
+    'Savings & Investments', 
+    'Debt Repayment', 
+    'Gifts & Donations'
+] as const
 
 // Validates dates, ensuring they're not in the future (with 5-min buffer)
 const dateSchema = z.date({required_error: "Date is required", invalid_type_error: "Invalid date format"})
