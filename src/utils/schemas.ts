@@ -52,7 +52,7 @@ export const newExpenseSchemaClient = z.object({
            message: "Amount must be greater than 0 and not exceed 999,999",
        }),
    date: dateSchema,
-   category: z.enum(categories)
+   category: z.string()
 })
 
 // Server-side expense validation with numeric amount and UUID
