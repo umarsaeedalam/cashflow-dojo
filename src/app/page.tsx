@@ -1,113 +1,53 @@
-import Image from "next/image";
+import type { Metadata } from "next"
+import localFont from 'next/font/local'
+import { FaGoogle, FaGithub } from "react-icons/fa"
+import { signInGoogle, signInGithub } from "@/lib/actions"
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+const local = localFont({
+    src: '../fonts/handbuck/HandbuckRegular-R99xE.otf',
+    display: 'swap',
+})
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+const metadata: Metadata = {
+    title: 'Welcome | Cashflow Dojo'
 }
+
+function LoginPage() {
+    return (
+        <div className="flex h-full items-center max-[550px]:justify-center">
+            <div className="flex mx-24 gap-20 max-[1300px]:flex-col max-[1300px]:gap-10 max-[1300px]:mx-16 max-[mx-0]:">
+                <div className="my-auto">
+                    <h1 className={`${local.className} text-accent text-8xl font-bold max-[1300px]:text-center max-[700px]:text-7xl`}>Cashflow Dojo</h1>
+
+                    <p className="text-3xl max-[700px]:text-2xl tracking-tight text-secondary font-normal mt-5 max-[1300px]:text-center max-[1300px]:mt-3 max-[550px]:hidden">Analyze your spending with comprehensive categorization and tracking for better financial control.</p>
+                </div>
+
+                <div className="max-w-md font-semibold text-primary border-secondary border-2 max-[550px]:bg-primary py-16 max-[1300px]:py-12 max-[700px]:py-8 px-8 max-[700px]:px-5 max-[550px]:px-4 rounded-xl flex flex-col items-center max-[550px]:border-primary max-[1300px]:self-center">
+                    <h1 className="text-3xl max-[700px]:text-2xl text-center max-[550px]:hidden text-secondary">Enter your financial dojo & begin tracking</h1>    
+
+                    <form action={signInGoogle}>
+                        <button type="submit" className="flex items-center gap-2 mt-10 max-[550px]:mt-1 max-[700px]:mt-6 bg-primary text-accent rounded-lg py-2 px-20 max-[700px]:px-16 max-[440px]:px-11 border-2 border-accent hover:bg-accent hover:text-primary outline-none focus-visible:outline-secondary transition-all ease-in-out duration-200 transform active:scale-90">
+                            <span className="text-lg max-[700px]:text-base">Continue with</span>
+
+                            <FaGoogle className="text-center text-lg max-[700px]:text-base"/>
+                        </button>
+                    </form>
+
+                    <p className="mt-2 text-secondary max-[700px]:text-sm max-[550px]:text-primary">or</p>
+
+                    <form action={signInGithub}>
+                        <button type="submit" className="flex items-center gap-2 mt-2 bg-primary text-accent rounded-lg py-2 px-20 max-[700px]:px-16 max-[440px]:px-11 border-2 border-accent hover:bg-accent hover:text-primary outline-none focus-visible:outline-secondary transition-all ease-in-out duration-200 transform active:scale-90">
+                            <span className="text-lg max-[700px]:text-base">Continue with</span>
+                            
+                            <FaGithub className="text-center text-lg max-[700px]:text-base"/>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default LoginPage;
+
+export { metadata }
