@@ -12,26 +12,43 @@ dayjs.extend(timezone)
  * Fetches or creates a user based on email
  * Creates a new user if one doesn't exist with default currency USD
  */
+import { Prisma } from '@prisma/client'
+
 export async function fetchUser(email: string | undefined | null, name: string | undefined | null): Promise<User> {
     if (!email) {
         throw Error('Email is required to fetch or create a user')
     }
 
     try {
-        // Try to find existing user
+        // Try to find existing user first
         let user = await prisma.user.findUnique({ 
             where: { email } 
         })
 
         // Create new user if none exists
         if (user === null) {
-            user = await prisma.user.create({
-                data: {
-                    email,
-                    name: name || "Anonymous",
-                    currency: "USD"
+            try {
+                user = await prisma.user.create({
+                    data: {
+                        email,
+                        name: name || "Anonymous",
+                        currency: "USD"
+                    }
+                })
+            } catch (error) {
+                if (error instanceof Prisma.PrismaClientKnownRequestError && 
+                    error.code === 'P2002') {
+                    // If creation fails due to race condition, try to fetch again
+                    user = await prisma.user.findUnique({
+                        where: { email }
+                    })
+                    if (!user) {
+                        throw error // Re-throw if user still doesn't exist
+                    }
+                } else {
+                    throw error // Re-throw other errors
                 }
-            })
+            }
         }
 
         return user
