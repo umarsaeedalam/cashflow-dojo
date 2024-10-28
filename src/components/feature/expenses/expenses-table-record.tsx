@@ -21,7 +21,7 @@ function ExpensesTableRecord({ expense, currency }: Props) {
 
             <td className="text-center border-secondary border-y-2 max-[900px]:hidden"><CategoryLabel category={expense.category} /></td>
 
-            <td className="py-4 text-center max-[515px]:text-left max-[515px]:px-6 border-secondary border-y-2 max-[515px]:border-l-2 max-[515px]:rounded-l-xl">{isMobile ? utcToLocalShorter(expense.date) : utcToLocal(expense.date)}</td>
+            <td className="py-4 text-center max-[515px]:text-left max-[515px]:pl-6 border-secondary border-y-2 max-[515px]:border-l-2 max-[515px]:rounded-l-xl">{isMobile ? utcToLocalShorter(expense.date) : utcToLocal(expense.date)}</td>
 
             <td className="py-4 text-center border-secondary border-y-2">{`${currencySymbol} ${isMobile ? formatExpenseAmount(expense.amount) : formatExpenseAmount(expense.amount)}`}</td>
 

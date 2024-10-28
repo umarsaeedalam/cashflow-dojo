@@ -52,9 +52,9 @@ function ExpensesTable({ expenses, currency, pageCount, dispatch, currentPage, u
                     <tr>
                         <th className="px-6 py-3 w-1/4 max-[900px]:w-1/3 max-[630px]:w-[40%] max-[515px]:hidden">Description</th>
 
-                        <th className=" py-3 w-1/6 text-center max-[900px]:hidden">Category</th>
+                        <th className="py-3 w-1/6 text-center max-[900px]:hidden">Category</th>
 
-                        <th className=" py-3 w-1/4 max-[900px]:w-1/3 max-[630px]:w-[25%] max-[515px]:w-[30%] text-center max-[515px]:text-left max-[515px]:pl-8">Date</th>
+                        <th className="py-3 w-1/4 max-[900px]:w-1/3 max-[630px]:w-[25%] max-[515px]:w-[30%] text-center max-[515px]:text-left max-[515px]:pl-8">Date</th>
 
                         <th className="py-3 w-1/6 max-[900px]:w-1/6 max-[630px]:w-[25%] max-[515px]:w-[50%] text-center">Amount</th>
 
@@ -70,10 +70,10 @@ function ExpensesTable({ expenses, currency, pageCount, dispatch, currentPage, u
 
                                 <td className="border-secondary border-y-2  max-[900px]:hidden"></td>
 
-                                <td className="py-4 border-secondary border-y-2 text-center max-[515px]:text-left max-[515px]:px-6 max-[515px]:border-l-2 max-[515px]:rounded-l-xl"> {isMobile2 && expense.name}</td>
+                                <td className="py-4 border-secondary border-y-2 text-center max-[515px]:text-left max-[515px]:pl-6 max-[515px]:border-l-2 max-[515px]:rounded-l-xl"> {isMobile2 && expense.name}</td>
 
                                 <td className="py-4 text-center border-secondary border-y-2 max-[1160px]:text-sm">
-                                    {`${currencySymbol} ${isMobile ? formatExpenseAmountShorter(expense.amount) : formatExpenseAmount(expense.amount)}`}
+                                    {`${currencySymbol} ${formatExpenseAmount(expense.amount)}`}
                                 </td>
 
                                 <td className="flex gap-2 py-3 pb-5 max-[630px]:pb-5 justify-center rounded-r-xl border-secondary border-y-2 border-r-2">&nbsp;</td>

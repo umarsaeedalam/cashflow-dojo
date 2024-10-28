@@ -28,7 +28,7 @@ export default function MobileNavbar() {
                 </button>
             </SheetTrigger>
 
-            <SheetContent side={"left"} className='bg-primary text-secondary border-primary rounded-r-lg w-[265px] font-semibold pl-4'>
+            <SheetContent side={"left"} className='bg-primary text-secondary border-primary rounded-r-lg w-[235px] font-semibold pl-4'>
                 <nav className={"col-start-1 col-end-2 row-start-1 row-end-3 flex flex-col h-full"}>
                     <Link href='/dashboard' onClick={() => setOpen(false)} className={`${local.className} ml-1 mt-8 text-3xl font-bold text-accent focus:outline-none focus-visible:outline-secondary rounded-md p-1`}>Cashflow Dojo</Link>
 
