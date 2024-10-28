@@ -8,12 +8,15 @@ import { BsThreeDotsVertical } from "react-icons/bs"
 import { deleteExpense } from "@/lib/actions"
 import ExpenseEditForm from "./expense-edit-form"
 import { Expense } from "@/utils/types"
+import ViewExpense from "./view-expense"
 
 type Props = {
     expense: Expense;
+    currency: string;
 }
 
-export default function EditAndDeleteButton({ expense }: Props) {
+export default function EditAndDeleteButton({ expense, currency }: Props) {
+    const [openV, setOpenV] = useState(false);
     const [openE, setOpenE] = useState(false);
     const [openD, setOpenD] = useState(false);
     const [isPending, startTransition] = useTransition();
@@ -28,13 +31,30 @@ export default function EditAndDeleteButton({ expense }: Props) {
     return (
         <Popover>
             <PopoverTrigger asChild>
-                <button className="rounded-md border-2 p-1 border-accent text-accent bg-primary hover:bg-accent hover:text-primary ease-in-out transition-colors focus:outline-none focus-visible:outline-secondary duration-200">
+                <button className="rounded-md border p-1 border-accent text-primary bg-accent hover:bg-accent-shade hover:border-accent-shade ease-in-out transition-colors focus:outline-none focus-visible:outline-secondary duration-200 transform active:scale-90">
                     <BsThreeDotsVertical />
                 </button>
             </PopoverTrigger>
 
             <PopoverContent className="w-35 !rounded-md bg-accent border-accent p-1">
                 <div className="flex flex-col items-stretch text-sm gap-1">
+                    <Dialog open={openV} onOpenChange={setOpenV}>
+                            <DialogTrigger asChild>
+                                <button className="py-1 px-6 rounded-md text-primary hover:text-accent hover:bg-primary transition-colors ease-in-out duration-200">View</button>
+                            </DialogTrigger>
+
+                            <DialogContent className="sm:max-w-[425px] !rounded-md bg-primary border-primary">
+                                <DialogHeader>
+                                    <DialogTitle className="max-[400px]:text-center">Expense</DialogTitle>
+                                </DialogHeader>
+
+                                <ViewExpense 
+                                    expense={expense}
+                                    currency={currency} 
+                                /> 
+                            </DialogContent>
+                        </Dialog>
+
                     <Dialog open={openE} onOpenChange={setOpenE}>
                         <DialogTrigger asChild>
                             <button className="py-1 px-6 rounded-md text-primary hover:text-accent hover:bg-primary transition-colors ease-in-out duration-200">Edit</button>
@@ -59,7 +79,7 @@ export default function EditAndDeleteButton({ expense }: Props) {
 
                         <AlertDialogContent className="!rounded-md bg-primary border-primary">
                             <AlertDialogHeader>
-                                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                                <AlertDialogTitle className="text-accent">Are you absolutely sure?</AlertDialogTitle>
 
                                 <AlertDialogDescription className="text-accent">
                                     This action cannot be undone. This will permanently delete this
@@ -68,11 +88,11 @@ export default function EditAndDeleteButton({ expense }: Props) {
                             </AlertDialogHeader>
 
                             <AlertDialogFooter className="flex items-center">
-                                <AlertDialogCancel className="mt-0 border-2 rounded-lg bg-primary text-secondary border-secondary font-bold py-2 px-4 hover:bg-secondary hover:text-primary focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
+                                <AlertDialogCancel className="mt-0 border rounded-lg bg-secondary text-neutral border-secondary font-bold py-2 px-4 hover:bg-secondary-shade hover:border-secondary-shade focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
                                     Cancel
                                 </AlertDialogCancel>
                                 
-                                <AlertDialogAction onClick={handleCancelSubmit} className="border-2 rounded-lg bg-primary text-accent border-accent font-bold py-2 px-4 hover:bg-accent hover:text-primary focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200">
+                                <AlertDialogAction onClick={handleCancelSubmit} className="border rounded-lg bg-accent text-primary border-accent font-bold py-2 px-4 hover:bg-accent-shade hover:border-accent-shade focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200">
                                     {isPending ? "Deleting..." : "Delete"}
                                 </AlertDialogAction>
                             </AlertDialogFooter>

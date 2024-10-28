@@ -28,7 +28,7 @@ function MonthlyExpensesPerCategory({ data, currency, handleCard }: Props) {
 
                     <button
                         onClick={() => handleCard((card) => card + 1)} 
-                        className="flex items-center justify-center bg-primary text-accent border-accent border-2 rounded-md w-7 max-[800px]:w-6 h-7 max-[800px]:h-6 hover:bg-accent hover:text-primary cursor-pointer focus:outline-none focus-visible:outline-secondary transition-colors ease-in-out transform active:scale-90 duration-200"
+                        className="flex items-center justify-center bg-accent text-primary border-accent border rounded-md w-7 max-[800px]:w-6 h-7 max-[800px]:h-6 hover:bg-accent-shade hover:border-accent-shade cursor-pointer focus:outline-none focus-visible:outline-secondary transition-colors ease-in-out transform active:scale-90 duration-200"
                     >
                         <HiArrowSmRight />
                     </button>

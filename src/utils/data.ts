@@ -1,21 +1,23 @@
 /* Currency symbols mapped to their respective currency codes */
 export const currencies = {
-    USD: '$',     // United States
-    EUR: '€',     // European Union
-    JPY: '¥',     // Japan
-    GBP: '£',     // United Kingdom
-    CNY: '¥',     // China
-    CAD: 'C$',    // Canada
+    AED: 'AED',   // United Arab Emirates (commonly shown as AED or DH)
     AUD: 'A$',    // Australia
-    CHF: 'Fr',    // Switzerland
-    HKD: 'HK$',   // Hong Kong
-    MXN: '$',     // Mexico
     BRL: 'R$',    // Brazil
-    RUB: '₽',     // Russia
+    CAD: 'C$',    // Canada
+    CHF: 'Fr',    // Switzerland
+    CNY: '¥',     // China
+    EUR: '€',     // European Union
+    GBP: '£',     // United Kingdom
+    HKD: 'HK$',   // Hong Kong
     INR: '₹',     // India
-    ZAR: 'R',     // South Africa
+    JPY: '¥',     // Japan
+    MXN: '$',     // Mexico
     PKR: '₨',     // Pakistan
+    RUB: '₽',     // Russia
+    SAR: 'SAR',   // Saudi Arabia (commonly shown as SAR or SR)
     SGD: 'S$',    // Singapore
+    USD: '$',     // United States
+    ZAR: 'R',     // South Africa
 } as const
 
 /* Expense categories supported by the application */

@@ -3,8 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Theme Configuration
-   HSL values for chart colors in light/dark modes */
+/* Theme Configuration - HSL values for chart colors in light/dark modes */
 @layer base {
     :root {
         --chart-1: 12 76% 61%;   /* Warm red */
@@ -23,8 +22,7 @@
     }
 }
 
-/* Custom Number Input Styling 
-   Creates a custom spinner with better visual design */
+/* Custom Number Input Styling */
 .custom-number-input::-webkit-inner-spin-button,
 .custom-number-input::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -63,8 +61,7 @@
     border-top: 4px solid #your-arrow-color;
 }
 
-/* Logo Animation 
-   3D coin spinning effect */
+/* Logo Animation - 3D coin spinning effect */
 .logo-spinner {
     animation: coin-spin 2s linear infinite;
     transform-style: preserve-3d;
@@ -75,19 +72,19 @@
     100% { transform: rotateY(360deg); }
 }
 
-/* Number Input Browser Resets
-   Removes default spinner arrows across browsers */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+/* Number Input Browser Resets */
+input[type="number"]:not(.scrollable-input)::-webkit-outer-spin-button,
+input[type="number"]:not(.scrollable-input)::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-input[type="number"] {
+input[type="number"]:not(.scrollable-input) {
     -moz-appearance: textfield;
 }
 
-/* Commented Code Reference
-.recharts-tooltip-cursor {
-    transition: all 50ms ease-in !important;
-} */
+/* Add this to your existing CSS file */
+[data-radix-scroll-area-scrollbar] {
+    display: flex !important;
+    opacity: 1 !important;
+  }

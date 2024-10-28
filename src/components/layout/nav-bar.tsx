@@ -29,7 +29,7 @@ function NavBar() {
             <ul className={"grow ml-4 max-[1400px]:ml-5 flex flex-col mt-10 mb-8 gap-2 font-semibold"}>
                 <li className={"flex gap-4 items-center rounded-md"}>
                     <Link href="/dashboard" className={`rounded-md focus:outline-none ${pathname === '/dashboard' ? 'focus-visible:outline-secondary': 'focus-visible:outline-accent'}`}>
-                        <div className={`mt-auto flex border-2 rounded-md gap-3 items-center ${pathname === '/dashboard' ? 'text-accent': ''} ${pathname === '/dashboard' ? 'border-accent': 'border-primary'} py-3 pl-4 pr-16 max-[1400px]:p-3 rounded-md hover:bg-accent hover:text-primary transition-colors ease-in-out duration-200`}>
+                        <div className={`mt-auto flex border rounded-md gap-3 items-center ${pathname === '/dashboard' ? 'text-primary bg-accent border-accent': 'text-secondary bg-primary border-primary'} py-3 pl-4 pr-16 max-[1400px]:p-3 rounded-md hover:bg-accent hover:text-primary transition-colors ease-in-out duration-200`}>
                             <TbLayoutDashboardFilled className={"text-2xl"}/>
 
                             {isDesktop && <p>Overview</p>} 
@@ -39,7 +39,7 @@ function NavBar() {
 
                 <li className={"flex gap-4 items-center rounded-md"}>
                     <Link href="/dashboard/expenses" className={`rounded-md focus:outline-none ${pathname === '/dashboard/expenses' ? 'focus-visible:outline-secondary': 'focus-visible:outline-accent'}`}>
-                        <div className={`mt-auto flex border-2 rounded-md gap-3 items-center ${pathname === '/dashboard/expenses' ? 'text-accent': ''} ${pathname === '/dashboard/expenses' ? 'border-accent': 'border-primary'} py-3 pl-4 pr-16 max-[1400px]:p-3 rounded-md hover:bg-accent hover:text-primary transition-colors ease-in-out duration-200`}>
+                        <div className={`mt-auto flex border rounded-md gap-3 items-center ${pathname === '/dashboard/expenses' ? 'text-primary bg-accent border-accent': 'text-secondary bg-primary border-primary'} py-3 pl-4 pr-16 max-[1400px]:p-3 rounded-md hover:bg-accent hover:text-primary transition-colors ease-in-out duration-200`}>
                             <FaMoneyBillTransfer className={"text-2xl"}/>
 
                             {isDesktop && <p>Expenses</p>}
@@ -49,7 +49,7 @@ function NavBar() {
 
                 <li className={"flex gap-4 items-center"}>
                     <Link href="/dashboard/analytics" className={`rounded-md focus:outline-none ${pathname === '/dashboard/analytics' ? 'focus-visible:outline-secondary': 'focus-visible:outline-accent'}`}>
-                        <div className={`mt-auto flex border-2 rounded-md gap-3 items-center ${pathname === '/dashboard/analytics' ? 'text-accent' : ''} ${pathname === '/dashboard/analytics' ? 'border-accent' : 'border-primary'} py-3 pl-4 pr-16 max-[1400px]:p-3 rounded-md hover:bg-accent hover:text-primary transition-colors ease-in-out duration-200`}>
+                        <div className={`mt-auto flex border-2 rounded-md gap-3 items-center ${pathname === '/dashboard/analytics' ? 'text-primary bg-accent border-accent' : 'text-secondary bg-primary border-primary'} py-3 pl-4 pr-16 max-[1400px]:p-3 rounded-md hover:bg-accent hover:text-primary transition-colors ease-in-out duration-200`}>
                             <MdAnalytics className={"text-2xl"}/>
 
                             {isDesktop && <p>Analytics</p>}
@@ -59,7 +59,7 @@ function NavBar() {
 
                 <li className={"mt-auto flex gap-4 items-center rounded-md"}>
                     <form action={signOutAction}>
-                        <button className={"mt-auto flex gap-3 items-center py-3 pl-4 pr-16 max-[1400px]:p-3 rounded-md hover:bg-accent hover:text-primary focus:outline-none focus-visible:outline-accent transition-colors ease-in-out duration-200"} type='submit' >
+                        <button className={"mt-auto flex gap-3 items-center py-3 pl-4 pr-16 max-[1400px]:p-3 rounded-md text-secondary hover:bg-accent hover:text-primary focus:outline-none focus-visible:outline-accent transition-colors ease-in-out duration-200"} type='submit' >
                             <TbLogout2 className={"text-2xl"}/>
                             
                             {isDesktop && <p>Log out</p>}

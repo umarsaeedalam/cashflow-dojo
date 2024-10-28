@@ -54,9 +54,9 @@ function ExpensesTable({ expenses, currency, pageCount, dispatch, currentPage, u
 
                         <th className=" py-3 w-1/6 text-center max-[900px]:hidden">Category</th>
 
-                        <th className=" py-3 w-1/4 max-[900px]:w-1/3 max-[630px]:w-[25%] max-[515px]:w-[40%] text-center max-[515px]:text-left max-[515px]:px-6">Date</th>
+                        <th className=" py-3 w-1/4 max-[900px]:w-1/3 max-[630px]:w-[25%] max-[515px]:w-[30%] text-center max-[515px]:text-left max-[515px]:pl-8">Date</th>
 
-                        <th className="py-3 w-1/6 max-[900px]:w-1/6 max-[630px]:w-[25%] max-[515px]:w-[40%] text-center">Amount</th>
+                        <th className="py-3 w-1/6 max-[900px]:w-1/6 max-[630px]:w-[25%] max-[515px]:w-[50%] text-center">Amount</th>
 
                         <th className="py-3 w-1/6 max-[900px]:w-1/6 max-[630px]:w-[10%] max-[515px]:w-[20%] text-center">Actions</th>
                     </tr>

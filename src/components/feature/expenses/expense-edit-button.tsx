@@ -16,7 +16,7 @@ function ExpenseEditButton({ expense }: Props) {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <button className="text-accent hover:text-primary border-2 border-accent hover:bg-accent p-2 rounded-md transition-all focus:outline-none focus-visible:outline-secondary ease-in-out duration-200 transform active:scale-90"><FaEdit /></button>
+                <button className="text-primary border border-accent hover:border-accent-shade bg-accent hover:bg-accent-shade p-2 rounded-md transition-all focus:outline-none focus-visible:outline-secondary ease-in-out duration-200 transform active:scale-90"><FaEdit /></button>
             </DialogTrigger>
 
             <DialogContent className="max-w-[450px] !rounded-md bg-primary border-primary">

@@ -67,7 +67,7 @@ const SheetContent = React.forwardRef<
       {...props}
       
     >
-      <SheetPrimitive.Close className="absolute right-4 top-4 p-1 transition-all ease-in-out duration-200 font-bold rounded-md text-accent border-accent border hover:bg-accent hover:text-primary outline-none focus-visible:outline-sage-800">
+      <SheetPrimitive.Close className="absolute right-4 top-4 p-1 transition-all ease-in-out duration-200 font-bold rounded-md text-accent hover:bg-accent active:bg-accent hover:text-primary active:text-primary outline-none focus-visible:outline-secondary transform active:scale-90">
         <RxCross2 className="font-bold" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>

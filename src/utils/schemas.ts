@@ -48,7 +48,7 @@ export const editProfileSchemaClient = z.object({
             (value) => value.replace(/\s/g, '').length >= 3,
             "Username must contain at least 3 non-space characters"
         ),
-    currency: z.enum(['USD', 'EUR', 'JPY', 'GBP', 'CNY', 'CAD', 'AUD', 'CHF', 'HKD', 'MXN', 'BRL', 'RUB', 'INR', 'ZAR', 'PKR', 'SGD'])
+    currency: z.enum(['USD', 'EUR', 'JPY', 'GBP', 'CNY', 'CAD', 'AUD', 'CHF', 'HKD', 'MXN', 'BRL', 'RUB', 'INR', 'ZAR', 'PKR', 'SGD', 'SAR', 'AED'])
   })
 
 // Client-side expense validation with string amount

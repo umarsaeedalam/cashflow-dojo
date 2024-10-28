@@ -55,8 +55,8 @@ function ExpenseForm({ userId, handleSetOpen }: Props) {
                         <FormLabel className="text-right max-[400px]:text-left font-bold">Description</FormLabel>
 
                         <div className="col-span-3 space-y-2 max-[400px]:col-span-4">
-                            <FormControl className="focus:!outline-none focus-visible:!outline-accent">
-                                <Input placeholder="Enter expense description" {...field} className="border border-secondary text-secondary rounded-md max-[500px]:text-sm placeholder:text-secondary focus:!outline-none focus-visible:!outline-accent" />
+                            <FormControl className="focus:!outline-none">
+                                <Input placeholder="Enter expense description" {...field} className="border border-secondary text-secondary rounded-md max-[500px]:text-sm placeholder:text-secondary focus:!outline-none" />
                             </FormControl>
 
                             <FormMessage className="text-red-600 text-xs" />
@@ -70,7 +70,7 @@ function ExpenseForm({ userId, handleSetOpen }: Props) {
 
                         <div className="col-span-3 space-y-1 max-[400px]:col-span-4">
                             <FormControl>
-                                <Input type="number" placeholder="Enter amount" {...field} className="border border-secondary text-secondary rounded-md placeholder:text-secondary focus:!outline-none focus-visible:!outline-accent" />
+                                <Input type="number" placeholder="Enter amount" {...field} className="border border-secondary text-secondary rounded-md placeholder:text-secondary focus:!outline-none" />
                             </FormControl>
 
                             <FormMessage className="text-red-600 text-xs" />
@@ -84,9 +84,9 @@ function ExpenseForm({ userId, handleSetOpen }: Props) {
 
                         <div className="col-span-3 space-y-1 max-[400px]:col-span-4">
                             <Popover>
-                                <PopoverTrigger asChild className="border bg-primary border-secondary text-secondary rounded-md placeholder:text-secondary focus:!outline-none focus-visible:!outline-accent">
+                                <PopoverTrigger asChild className="border bg-primary border-secondary text-secondary rounded-md placeholder:text-secondary focus:!outline-none">
                                     <FormControl>
-                                        <Button variant={"outline"} className={cn("w-full pl-3 text-left font-normal hover:bg-secondary hover:text-neutral", !field.value && "text-muted-foreground")}>
+                                        <Button variant={"outline"} className={cn("w-full pl-3 text-left font-normal", !field.value && "text-muted-foreground")}>
                                             {field.value ? (format(field.value, "PPP")) : (<span>Pick a date</span>)}
 
                                             <CalendarIcon className="ml-auto h-4 w-4 opacity-100" />
@@ -126,12 +126,12 @@ function ExpenseForm({ userId, handleSetOpen }: Props) {
                         <div className="col-span-3 max-[400px]:col-span-4 space-y-1">
                             <Select onValueChange={field.onChange} value={field.value}>
                                 <FormControl className="">
-                                    <SelectTrigger className="border-secondary border text-secondary rounded-md hover:text-neutral hover:bg-secondary focus:outline-none focus-visible:outline-accent transition-colors ease-in-out duration-200">
+                                    <SelectTrigger className="border-secondary border text-secondary rounded-md focus:outline-none transition-colors ease-in-out duration-200">
                                         <SelectValue placeholder="Select a category" className="placeholder:!text-neutral/50" />
                                     </SelectTrigger>
                                 </FormControl>
 
-                                <SelectContent onWheel={(e) => e.stopPropagation()} className="bg-secondary text-neutral placeholder:!text-secondary/50 rounded-md border-secondary">
+                                <SelectContent onWheel={(e) => e.stopPropagation()} onTouchStart={(e) => e.stopPropagation()} onTouchMove={(e) => e.stopPropagation()} className="bg-secondary text-neutral placeholder:!text-secondary/50 rounded-md border-secondary">
                                     <SelectItem value="Housing">Housing</SelectItem>
                                     <SelectItem value="Transportation">Transportation</SelectItem>
                                     <SelectItem value="Food & Dining">Food & Dining</SelectItem>
@@ -152,7 +152,7 @@ function ExpenseForm({ userId, handleSetOpen }: Props) {
                 )}/>
 
                 <div className="flex justify-end">
-                    <Button type="submit" disabled={isPending} className="bg-primary font-semibold text-accent border-2 rounded-lg mt-2 text-right border-accent hover:bg-accent hover:text-primary !outline-none focus-visible:!outline-secondary transition-all ease-in-ot duration-200 transform active:scale-90">
+                    <Button type="submit" disabled={isPending} className="bg-accent font-semibold text-primary border rounded-lg mt-2 text-right border-accent hover:bg-accent-shade hover:border-accent-shade !outline-none focus-visible:!outline-secondary transition-all ease-in-ot duration-200 transform active:scale-90">
                         {isPending ? 'Adding...' : 'Add Expense'}
                     </Button>
                 </div>

@@ -11,7 +11,7 @@ async function DashboardLayout({ children }: { children: React.ReactNode }) {
             content={children} 
             user={user} 
             profilePicture={session?.user?.image} 
-        />    
+        />
     );
 }
 

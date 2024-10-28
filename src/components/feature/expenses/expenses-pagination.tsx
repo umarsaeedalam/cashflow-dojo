@@ -42,9 +42,9 @@ function ExpensesPagination({ pageCount, currentPage, dispatch, userId }: Props)
                 color: '#bde9c9',
             },
             '&.Mui-selected': {
-                backgroundColor: '#bde9c9',
-                color: '#ea5166',
-                border: '2px solid #ea5166',
+                backgroundColor: '#ea5166',
+                color: '#bde9c9',
+                border: '1px solid #ea5166',
                 '&:hover': {
                     backgroundColor: '#ea5166',
                     color: '#bde9c9',

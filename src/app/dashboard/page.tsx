@@ -18,7 +18,7 @@ async function OverviewPage() {
     const currencySymbol = getCurrencySymbol(user.currency)
 
     return (
-        <div className="grid grid-cols-[64fr_36fr] max-[960px]:grid-cols-[100fr] gap-14 max-[1400px]:gap-8 max-[1280px]:gap-6 px-12 max-[1400px]:px-8 max-[1160px]:px-6">
+        <div className="grid grid-cols-[64fr_36fr] max-[960px]:grid-cols-[100fr] gap-14 max-[1400px]:gap-8 max-[1280px]:gap-6 px-12 max-[1400px]:px-8 max-[1160px]:px-6 max-[960px]:pb-6">
             <MonthlySummary 
                 allExpenses={expenses} 
                 currencySymbol={currencySymbol} 

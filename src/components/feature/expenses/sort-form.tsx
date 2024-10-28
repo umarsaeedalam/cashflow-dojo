@@ -52,7 +52,7 @@ function SortForm({ handleSetOpen, dispatch, sortBy, sortDirection }: Props) {
                         <div className="col-span-3 max-[400px]:col-span-4 space-y-1">
                             <Select onValueChange={field.onChange} value={field.value}>
                                 <FormControl>
-                                    <SelectTrigger className="border-secondary border text-secondary rounded-md hover:text-neutral hover:bg-secondary focus:outline-none focus:outline-accent transition-colors ease-in-out duration-200">
+                                    <SelectTrigger className="border-secondary border text-secondary rounded-md focus:outline-none transition-colors ease-in-out duration-200">
                                         <SelectValue placeholder="Select a category" className="placeholder:!text-stone-400" />
                                     </SelectTrigger>
                                 </FormControl>
@@ -76,7 +76,7 @@ function SortForm({ handleSetOpen, dispatch, sortBy, sortDirection }: Props) {
                         <div className="col-span-3 max-[400px]:col-span-4 space-y-1">
                             <Select onValueChange={field.onChange} value={field.value}>
                                 <FormControl>
-                                    <SelectTrigger className="border-secondary border text-secondary rounded-md hover:text-neutral hover:bg-secondary focus:outline-none focus:outline-accent transition-colors ease-in-out duration-200">
+                                    <SelectTrigger className="border-secondary border text-secondary rounded-md focus:outline-none transition-colors ease-in-out duration-200">
                                         <SelectValue placeholder="Select a direction" className="placeholder:!text-stone-400" />
                                     </SelectTrigger>
                                 </FormControl>
@@ -94,11 +94,11 @@ function SortForm({ handleSetOpen, dispatch, sortBy, sortDirection }: Props) {
                 )}/>
 
                 <div className="flex justify-end space-x-2 mt-2">
-                    <Button type="button" onClick={onClick} className="border-2 font-semibold rounded-lg border-secondary text-secondary py-2 px-4 hover:bg-secondary hover:text-primary focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
+                    <Button type="button" onClick={onClick} className="border font-semibold rounded-lg border-secondary text-neutral bg-secondary py-2 px-4 hover:bg-secondary-shade hover:border-secondary-shade focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
                         Reset
                     </Button>
                     
-                    <Button type="submit" className="border-2 font-semibold rounded-lg bg-primary text-accent border-accent py-2 px-4 hover:bg-accent hover:text-primary focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200">
+                    <Button type="submit" className="border font-semibold rounded-lg bg-accent text-primary border-accent py-2 px-4 hover:bg-accent-shade hover:border-accent-shade focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200">
                         Apply
                     </Button>
                 </div>

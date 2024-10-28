@@ -45,7 +45,7 @@ function ExpensesPage({ user, expenses, totalPages, minAmount, maxAmount, curren
     });
 
     return (
-        <div className="pt-2 px-12 max-[1400px]:px-8 max-[1160px]:px-6 overflow-auto">
+        <div className="pt-2 px-12 max-[1400px]:px-8 max-[1160px]:px-6 max-[900px]:pb-6 overflow-auto">
             <div className="flex items-center justify-between">
                 <p className="text-3xl max-[1400px]:text-2xl font-bold">Expenses</p>
 
@@ -59,8 +59,8 @@ function ExpensesPage({ user, expenses, totalPages, minAmount, maxAmount, curren
                     <FilterButton 
                         dispatch={dispatch} 
                         currency={user.currency} 
-                        minAmount={minAmount} 
-                        maxAmount={maxAmount} 
+                        minAmount={state.filters.amountRange[0]} 
+                        maxAmount={state.filters.amountRange[1]} 
                         filterConfig={state.filters} 
                     />
 

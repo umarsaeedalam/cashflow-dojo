@@ -23,12 +23,12 @@ function ExpenseDeleteButton({ expense_id }: Props) {
     return (
         <AlertDialog open={open} onOpenChange={setOpen}>
             <AlertDialogTrigger asChild>
-                <button className="text-accent hover:text-primary border-2 border-accent hover:bg-accent p-2 rounded-md transition-all focus:outline-none focus-visible:outline-secondary ease-in-out duration-200 transform active:scale-90"><FaTrash /></button>
+                <button className="text-primary border border-accent hover:border-accent-shade bg-accent hover:bg-accent-shade p-2 rounded-md transition-all focus:outline-none focus-visible:outline-secondary ease-in-out duration-200 transform active:scale-90"><FaTrash /></button>
             </AlertDialogTrigger>
 
             <AlertDialogContent className="max-w-[450px] !rounded-md bg-primary border-primary">
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                    <AlertDialogTitle className="text-accent">Are you absolutely sure?</AlertDialogTitle>
 
                     <AlertDialogDescription className="text-accent">
                         This action cannot be undone. This will permanently delete this
@@ -37,11 +37,11 @@ function ExpenseDeleteButton({ expense_id }: Props) {
                 </AlertDialogHeader>
 
                 <AlertDialogFooter>
-                    <AlertDialogCancel className="border-2 font-semibold rounded-lg border-secondary bg-primary text-secondary py-2 px-4 hover:bg-secondary hover:text-primary focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
+                    <AlertDialogCancel className="border font-semibold rounded-lg border-secondary bg-secondary text-neutral py-2 px-4 hover:bg-secondary-shade hover:border-secondary-shade focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
                         Cancel
                     </AlertDialogCancel>
 
-                    <AlertDialogAction onClick={handleCancelSubmit} className="border-2 font-semibold rounded-lg bg-primary text-accent border-accent py-2 px-4 hover:bg-accent hover:text-primary focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200">
+                    <AlertDialogAction onClick={handleCancelSubmit} className="border font-semibold rounded-lg bg-accent text-primary border-accent py-2 px-4 hover:bg-accent-shade hover:border-accent-shade focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200">
                         {isPending ? "Deleting..." : "Delete"}
                     </AlertDialogAction>
                 </AlertDialogFooter>

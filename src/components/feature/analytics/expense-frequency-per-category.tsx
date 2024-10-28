@@ -17,7 +17,7 @@ function ExpenseFrequencyPerCategory({ data, handleCard }: Props) {
                 <CardTitle className='flex justify-center items-center gap-5 max-[800px]:gap-3'>
                     <button
                         onClick={() => handleCard((card) => card - 1)}
-                        className="flex items-center justify-center bg-primary border-2 border-accent text-accent rounded-md w-7 max-[800px]:w-6 h-7 max-[800px]:h-6 hover:bg-accent hover:text-primary cursor-pointer focus:outline-none focus-visible:outline-secondary transition-colors ease-in-out transform active:scale-90 duration-200"
+                        className="flex items-center justify-center bg-accent border border-accent text-primary rounded-md w-7 max-[800px]:w-6 h-7 max-[800px]:h-6 hover:bg-accent-shade hover:border-accent-shade cursor-pointer focus:outline-none focus-visible:outline-secondary transition-colors ease-in-out transform active:scale-90 duration-200"
                     >
                         <HiArrowSmLeft />
                     </button>

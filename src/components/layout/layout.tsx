@@ -8,6 +8,7 @@ import NavBar from "./nav-bar"
 import { User } from "@/utils/types"
 import logo from '../../../public/android-chrome-512x512.png'
 
+
 type Props = {
     content: React.ReactNode;
     user: User;
@@ -24,7 +25,7 @@ function Layout({ content, user, profilePicture }: Props) {
 
     if (!isMounted) {
         return (
-            <div className="h-full flex justify-center items-center">
+            <div className="h-svh flex justify-center items-center">
                 <Image src={logo} alt="Loading..." height={75}/>
             </div>
         )

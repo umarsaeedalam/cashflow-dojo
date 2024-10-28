@@ -129,7 +129,7 @@ function FilterForm({ handleSetOpen, dispatch, currency, minAmount, maxAmount, f
                             <Popover>
                                 <PopoverTrigger asChild className="bg-primary border border-secondary text-secondary rounded-md placeholder:text-secondary/50 focus:outline-none focus-visible:!outline-sage-800">
                                     <FormControl>
-                                        <Button id="date" variant={"outline"} className={cn("w-full justify-start text-left font-normal hover:bg-secondary hover:text-neutral", !field.value && "text-muted-foreground")}>
+                                        <Button id="date" variant={"outline"} className={cn("w-full justify-start text-left font-normal", !field.value && "text-muted-foreground")}>
                                             <CalendarIcon className="mr-2 h-4 w-4 opacity-100" />
 
                                             {field.value?.from ? (
@@ -174,11 +174,11 @@ function FilterForm({ handleSetOpen, dispatch, currency, minAmount, maxAmount, f
                 )}/>
 
                 <div className="flex justify-end space-x-2 mt-2">
-                    <Button type="button" onClick={onClick} className="border-2 font-semibold rounded-lg border-secondary text-secondary py-2 px-4 hover:bg-secondary hover:text-primary focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
+                    <Button type="button" onClick={onClick} className="border font-semibold rounded-lg border-secondary bg-secondary text-neutral py-2 px-4 hover:bg-secondary-shade hover:border-secondary-shadee focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
                         Reset
                     </Button>
                     
-                    <Button type="submit" className="border-2 font-semibold rounded-lg bg-primary text-accent border-accent py-2 px-4 hover:bg-accent hover:text-primary focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200">
+                    <Button type="submit" className="border font-semibold rounded-lg bg-accent text-primary border-accent py-2 px-4 hover:bg-accent-shade hover:border-accent-shade focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200">
                         Apply
                     </Button>
                 </div>
