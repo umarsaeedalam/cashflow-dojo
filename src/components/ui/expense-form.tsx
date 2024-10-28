@@ -43,6 +43,7 @@ function ExpenseForm({ userId, handleSetOpen }: Props) {
                 date: localToUTC(data.date)
             };
             await newExpense(userId, formattedData);
+            await new Promise(resolve => setTimeout(resolve, 1000));
             handleSetOpen(false);
         })
     }

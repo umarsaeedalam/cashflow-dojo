@@ -16,6 +16,7 @@ function ExpenseDeleteButton({ expense_id }: Props) {
     function handleCancelSubmit() {
         startTransition(async () => {
             await deleteExpense(expense_id);
+            await new Promise(resolve => setTimeout(resolve, 2000));
             setOpen(false);
         })
     }

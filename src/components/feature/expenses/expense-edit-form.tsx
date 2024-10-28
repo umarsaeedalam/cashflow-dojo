@@ -43,6 +43,7 @@ function ExpenseEditForm({ expense, handleSetOpen }: Props) {
         startTransition(async () => {
             const formattedData = {...data, amount: parseFloat(data.amount)};
             await editExpense(expense.expense_id, formattedData)
+            await new Promise(resolve => setTimeout(resolve, 1000));
             handleSetOpen(false);
         })
     }

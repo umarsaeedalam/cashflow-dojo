@@ -24,6 +24,7 @@ export default function EditAndDeleteButton({ expense, currency }: Props) {
     function handleCancelSubmit() {
         startTransition(async () => {
             await deleteExpense(expense.expense_id);
+            await new Promise(resolve => setTimeout(resolve, 2000));
             setOpenD(false);
         })
     }
