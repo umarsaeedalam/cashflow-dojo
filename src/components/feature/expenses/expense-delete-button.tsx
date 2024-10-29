@@ -37,12 +37,13 @@ function ExpenseDeleteButton({ expense_id }: Props) {
                 </DialogHeader>
                 <DialogFooter>
                     <DialogClose asChild>
-                        <Button className="border font-semibold rounded-lg border-secondary bg-secondary text-neutral py-2 px- hover:bg-secondary-shade hover:border-secondary-shade focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
+                        <Button disabled={isPending} className="border font-semibold rounded-lg border-secondary bg-secondary text-neutral py-2 px- hover:bg-secondary-shade hover:border-secondary-shade focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
                             Cancel
                         </Button>
                     </DialogClose>
                     <Button 
-                        onClick={handleCancelSubmit} 
+                        onClick={handleCancelSubmit}
+                        disabled={isPending} 
                         className="border font-semibold rounded-lg bg-accent text-primary border-accent py-2 px-4 hover:bg-accent-shade hover:border-accent-shade focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200"
                     >
                         {isPending ? "Deleting..." : "Delete"}

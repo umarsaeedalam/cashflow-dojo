@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useTransition } from "react"
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/shadcn/dialog"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/shadcn/dialog"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/shadcn/popover"
 import { Button } from "@/components/ui/shadcn/button"
 import { BsThreeDotsVertical } from "react-icons/bs"
@@ -24,7 +24,7 @@ export default function EditAndDeleteButton({ expense, currency }: Props) {
     function handleCancelSubmit() {
         startTransition(async () => {
             await deleteExpense(expense.expense_id);
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            await new Promise(resolve => setTimeout(resolve, 1000));
             setOpenD(false);
         })
     }
@@ -87,12 +87,13 @@ export default function EditAndDeleteButton({ expense, currency }: Props) {
                             </DialogHeader>
                             <div className="flex justify-end gap-2">
                                 <DialogClose asChild>
-                                    <Button className="border font-semibold rounded-lg border-secondary bg-secondary text-neutral py-2 px- hover:bg-secondary-shade hover:border-secondary-shade focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
+                                    <Button disabled={isPending} className="border font-semibold rounded-lg border-secondary bg-secondary text-neutral py-2 px- hover:bg-secondary-shade hover:border-secondary-shade focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
                                         Cancel
                                     </Button>
                                 </DialogClose>
                                 <Button 
-                                    onClick={handleCancelSubmit} 
+                                    onClick={handleCancelSubmit}
+                                    disabled={isPending} 
                                     className="border font-semibold rounded-lg bg-accent text-primary border-accent py-2 px-4 hover:bg-accent-shade hover:border-accent-shade focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200"
                                 >
                                     {isPending ? "Deleting..." : "Delete"}
