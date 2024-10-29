@@ -3,6 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    color-scheme: only light;
+  }
+  
+  html {
+    forced-color-adjust: none;
+    -ms-high-contrast: none;
+    -webkit-forced-color-adjust: none;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    html {
+      filter: none !important;
+    }
+  }
+
 /* Theme Configuration - HSL values for chart colors in light/dark modes */
 @layer base {
     :root {
