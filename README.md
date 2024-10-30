@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cashflow Dojo
 
-## Getting Started
+A personal portfolio project that delivers a modern, intuitive expense tracking application. Cashflow Dojo helps users take control of their finances through comprehensive expense monitoring, detailed spending analysis, and actionable insights into financial habits - all wrapped in a sleek, user-friendly interface.
 
-First, run the development server:
+## 📸 Snippet
 
+![Cashflow Dojo Overview](/public/og-image.png)
+
+## ✨ Features
+
+### Comprehensive Expense Management
+- 🧾 Easy expense entry with detailed categorization
+- 📋 View, edit, and delete expense records
+- 🏷️ Diverse categorization system with 11 preset categories
+- 💼 Multi-currency support with 18 major currencies
+
+### Advanced Analytics
+- 📊 Interactive charts and visualizations
+- 📈 Monthly spending patterns analysis
+- 🎯 Category-wise expense breakdown
+- 💡 Smart insights on spending habits
+
+### User Experience
+- 🌙 Modern, clean interface
+- 📱 Fully responsive design for all devices
+- ⚡ Real-time updates and smooth transitions
+- 🔍 Advanced filtering and sorting capabilities
+
+### Security & Authentication
+- 🔒 Secure authentication via Google and GitHub
+- 🔐 Protected routes and data privacy
+- 👤 Personalized user profiles
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18.0 or higher
+- npm or yarn package manager
+- A modern web browser
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/cashflow-dojo.git
+```
+2. Navigate to the project directory:
+```bash
+cd cashflow-dojo
+```
+3. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+4. Set up environment variables:
+Create a `.env.local` file in the root directory and add the following variables:
+```bash
+# Auth Providers
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+
+# Database
+DATABASE_URL=your_database_url
+
+# Auth
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
+```
+5. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+6. Open http://localhost:3000 in your browser.
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Next.js** - React framework for production
+- **React** - UI library
+- **TypeScript** - Static typing
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - UI component library
+- **Recharts** - Chart library for data visualization
+- **React Hook Form** - Form handling
+- **Zod** - Schema validation
+
+### Authentication
+- **NextAuth.js** - Authentication solution
+- Support for Google and GitHub providers
+
+### Development Tools
+- ESLint - Code linting
+- Prettier - Code formatting
+- Husky - Git hooks
+- PostCSS - CSS processing
+
+## 📱 Responsive Design
+
+Cashflow Dojo is built with a desktop-first approach, ensuring a seamless experience across all devices:
+
+## 🎨 Customization
+
+### Theme Configuration
+
+The application uses a custom theme with the following color palette:
+
+```css
+:root {
+  --primary: #bde9c9;
+  --secondary: #2d8c47;
+  --accent: #ea5166;
+  --neutral: #fcf9e0;
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📝 Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cashflow-dojo/
+├── src/
+│   ├── app/                             # Next.js app directory
+│   ├── components/                      # React components
+│   │   ├── feature/                     # Feature-specific components
+│   │   │   ├── analytics/               # Analytics page components
+│   │   │   ├── expenses/                # Expenses page components
+│   │   │   └── overview/                # Overview page components
+│   │   ├── layout/                      # Layout components
+│   │   └── ui/                          # Reusable UI components
+│   │       ├── shadcn/                  # Shadcn UI components
+│   ├── fonts/                          # Custom font files
+│   ├── lib/                            # Core utility functions
+│   ├── styles/                         # Styling files
+│   └── utils/                          # Helper functions
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🤝 Contributing
 
-## Learn More
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add some AmazingFeature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📧 Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+If you have any questions, feel free to reach out:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Email: umarsaeedalam@gmail.com
+- LinkedIn: www.linkedin.com/in/umarsaeedalam
