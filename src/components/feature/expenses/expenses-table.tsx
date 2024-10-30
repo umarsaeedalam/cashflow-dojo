@@ -66,17 +66,17 @@ function ExpensesTable({ expenses, currency, pageCount, dispatch, currentPage, u
                     {displayedExpenses.map((expense) =>
                         expense.expense_id === 'total' ? (
                             <tr key="total" className="text-accent font-bold">
-                                <td className="pl-6 py-4 rounded-l-xl border-secondary border-y-2 border-l-2 max-[515px]:hidden">{expense.name}</td>
+                                <td className="pl-6 py-4 rounded-l-xl border-accent  border-y-2 border-l-2 max-[515px]:hidden">{expense.name}</td>
 
-                                <td className="border-secondary border-y-2  max-[900px]:hidden"></td>
+                                <td className="border-accent  border-y-2  max-[900px]:hidden"></td>
 
-                                <td className="py-4 border-secondary border-y-2 text-center max-[515px]:text-left max-[515px]:pl-6 max-[515px]:border-l-2 max-[515px]:rounded-l-xl"> {isMobile2 && expense.name}</td>
+                                <td className="py-4 border-accent  border-y-2 text-center max-[515px]:text-left max-[515px]:pl-6 max-[515px]:border-l-2 max-[515px]:rounded-l-xl"> {isMobile2 && expense.name}</td>
 
-                                <td className="py-4 text-center border-secondary border-y-2 max-[1160px]:text-sm">
+                                <td className="py-4 text-center border-accent  border-y-2 max-[1160px]:text-sm">
                                     {`${currencySymbol} ${formatExpenseAmount(expense.amount)}`}
                                 </td>
 
-                                <td className="flex gap-2 py-3 pb-5 max-[630px]:pb-5 justify-center rounded-r-xl border-secondary border-y-2 border-r-2">&nbsp;</td>
+                                <td className="flex gap-2 py-3 pb-5 max-[630px]:pb-5 justify-center rounded-r-xl border-accent  border-y-2 border-r-2">&nbsp;</td>
                             </tr>
                         ) : (
                             <ExpensesTableRecord

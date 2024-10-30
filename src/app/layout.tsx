@@ -55,10 +55,6 @@ const metadata: Metadata = {
 function RootLayout({ children, }: Readonly<{children: React.ReactNode;}>) {
     return (
         <html lang="en">
-            <head>
-                <meta name="color-scheme" content="light only" />
-            </head>
-            
             <body className={`${local.className} h-svh bg-primary text-secondary`}>
                 {children}
             </body>
