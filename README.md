@@ -42,7 +42,7 @@ A personal portfolio project that delivers a modern, intuitive expense tracking 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/cashflow-dojo.git
+git clone https://github.com/umarsaeedalam/cashflow-dojo.git
 ```
 2. Navigate to the project directory:
 ```bash
