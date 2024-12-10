@@ -6,6 +6,7 @@ import ExpensesTable from "./expenses-table"
 import FilterButton from "./filter-button"
 import SortButton from "./sort-button"
 import { reducer } from "@/lib/reducer"
+import { categories } from "@/utils/data"
 import { User, Expense } from '@/utils/types'
 
 type Props = {
@@ -26,19 +27,7 @@ function ExpensesPage({ user, expenses, totalPages, minAmount, maxAmount, curren
         sortBy: 'Date',
         sortDirection: 'Descending',
         filters: {
-            categories: [
-                'Housing',
-                'Transportation', 
-                'Food & Dining', 
-                'Healthcare', 
-                'Personal Care', 
-                'Education', 
-                'Entertainment & Leisure', 
-                'Technology', 
-                'Savings & Investments', 
-                'Debt Repayment', 
-                'Gifts & Donations'
-            ],
+            categories: categories,
             amountRange: [minAmount, maxAmount],
             dateRange: { from: undefined, to: undefined }
         }
@@ -47,7 +36,7 @@ function ExpensesPage({ user, expenses, totalPages, minAmount, maxAmount, curren
     return (
         <div className="pt-2 px-12 max-[1400px]:px-8 max-[1160px]:px-6 max-[900px]:pb-6 overflow-auto">
             <div className="flex items-center justify-between">
-                <p className="text-3xl max-[1400px]:text-2xl font-bold">Expenses</p>
+                <p className="text-3xl max-[1400px]:text-2xl font-bold tracking-wide">Expenses</p>
 
                 <div className="flex items-center gap-4 max-[630px]:gap-2">
                     <SortButton 

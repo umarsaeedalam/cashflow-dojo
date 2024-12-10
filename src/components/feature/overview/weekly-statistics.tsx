@@ -11,8 +11,8 @@ function MonthlyStatistics({ allExpenses, month }: Props) {
     const data = getCurrentMonthExpenses(allExpenses, month)
 
     return (
-        <div className="flex flex-col gap-3">
-            <p className="font-bold text-lg max-[1400px]:text-base">Expense Distribution</p>
+        <div className="flex flex-col gap-5">
+            <p className="font-bold text-lg max-[1400px]:text-base tracking-wide">Expense Distribution</p>
 
             <ExpenseDistributionChart chartData={data} />
         </div>

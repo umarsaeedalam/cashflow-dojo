@@ -146,7 +146,7 @@ const ChartTooltipContent = React.forwardRef<
 
       if (labelFormatter) {
         return (
-          <div className={cn("font-medium", labelClassName)}>
+          <div className={cn("font-medium tracking-wide", labelClassName)}>
             {labelFormatter(value, payload)}
           </div>
         )
@@ -156,7 +156,7 @@ const ChartTooltipContent = React.forwardRef<
         return null
       }
 
-      return <div className={cn("font-medium underline underline-offset-2", labelClassName)}>{value}</div>
+      return <div className={cn("font-medium underline underline-offset-2 tracking-wide", labelClassName)}>{value}</div>
     }, [
       label,
       labelFormatter,
@@ -177,7 +177,7 @@ const ChartTooltipContent = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          "grid w-[16rem] items-start gap-1.5 rounded-md bg-accent text-primary font-semibold px-3 py-2 text-xs dark:border-neutral-800 dark:border-neutral-800/50 dark:bg-neutral-950",
+          "grid w-[16rem] items-start gap-1.5 rounded-md bg-accent tracking-wide text-dark-700 font-semibold px-3 py-2 text-xs dark:border-neutral-800 dark:border-neutral-800/50 dark:bg-neutral-950",
           className
         )}
       >
@@ -192,7 +192,7 @@ const ChartTooltipContent = React.forwardRef<
               <div
                 key={item.dataKey}
                 className={cn(
-                  "flex w-full items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-primary dark:[&>svg]:text-neutral-400",
+                  "flex w-full items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-dark-700 dark:[&>svg]:text-neutral-400",
                   indicator === "dot" && "items-center"
                 )}
               >
@@ -232,12 +232,12 @@ const ChartTooltipContent = React.forwardRef<
                     >
                       <div className="grid gap-1.5">
                         {nestLabel ? tooltipLabel : null}
-                        <span className="text-primary dark:text-neutral-400">
+                        <span className="text-dark-700 tracking-wide dark:text-neutral-400">
                          {item.payload.description || itemConfig?.label || item.name}
                         </span>
                       </div>
                       {item.value && (
-                        <span className="tabular-nums text-primary font-semibold dark:text-neutral-50">
+                        <span className="tabular-nums text-dark-700 tracking-wide font-semibold dark:text-neutral-50">
                           {item.value.toLocaleString()}
                         </span>
                       )}

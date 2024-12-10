@@ -20,9 +20,9 @@ function AnalyticsSection({ expenses, currency }: Props) {
     const [card, setCard] = useState(1);
 
     return (
-        <div className="pt-3 px-12 max-[1400px]:px-8 max-[1160px]:px-6 max-[800px]:pb-6">
+        <div className="pt-3 px-12 max-[1400px]:px-8 max-[1160px]:px-6 pb-6">
             <div className="mb-2 max-[1400px]:mb-4 flex justify-between items-center">
-                <h1 className="text-3xl max-[1400px]:text-2xl max-[800px]:text-xl font-bold">Analytics</h1>
+                <h1 className="text-3xl max-[1400px]:text-2xl max-[800px]:text-xl font-bold tracking-wide">Analytics</h1>
 
                 <MonthButton 
                     month={month} 

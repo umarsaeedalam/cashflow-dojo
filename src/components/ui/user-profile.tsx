@@ -12,8 +12,8 @@ function UserProfile({ username, profilePicture }: ProfileProps) {
     const imageSize = isTablet ? 28 : 32
 
     return (
-        <div className={`flex p-1 items-center rounded-lg gap-4 hover:underline-offset-4 hover:underline hover:text-accent-shade outline-none transition-all ease-in-out duration-200 max-[945px]:gap-3`}>
-            <p className="font-semibold max-[945px]:text-sm">{username}</p>
+        <div className={`flex p-1 items-center rounded-lg gap-4 hover:underline-offset-[6px] hover:underline hover:text-accent-500 outline-none transition-all ease-in-out duration-200 max-[945px]:gap-3`}>
+            <p className="font-semibold max-[945px]:text-sm tracking-wide">{username}</p>
             
             {profilePicture ? (
                 <Image 

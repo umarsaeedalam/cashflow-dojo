@@ -17,16 +17,16 @@ function ProfileButton({ user, profilePicture }: Props) {
 
     return (
         <Sheet open={open} onOpenChange={setOpen} modal={true}>
-            <SheetTrigger className="outline-none text-accent focus-visible:outline-secondary rounded-lg transition-colors ease-in-out duration-200">
+            <SheetTrigger className="outline-none text-accent focus-visible:outline-accent-500 rounded-lg transition-colors ease-in-out duration-200">
                 <UserProfile 
                     username={user.name} 
                     profilePicture={profilePicture} 
                 />
             </SheetTrigger>
 
-            <SheetContent className="max-w-[425px] bg-primary text-secondary border-primary rounded-l-lg">
+            <SheetContent className="max-w-[425px] bg-[#CDD5E0] rounded-l-3xl border-0">
                 <SheetHeader>
-                    <SheetTitle className="text-secondary text-left max-[500px]:text-center">Edit profile</SheetTitle>
+                    <SheetTitle className="text-left max-[500px]:text-center tracking-wide">Edit profile</SheetTitle>
                 </SheetHeader>
                 
                 <ProfileForm 

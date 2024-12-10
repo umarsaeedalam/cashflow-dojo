@@ -1,7 +1,7 @@
 /**
  * Loading Ellipsis Animation
  * Creates a series of dots that animate in sequence
- * Color: #ea5166 
+ * Color: #333333 
  */
 
 /* Container */
@@ -10,7 +10,7 @@
     position: relative;
     width: 80px;
     height: 80px;
-    color: #ea5166;
+    color: #333333;
 }
 
 /* Common dot styles */

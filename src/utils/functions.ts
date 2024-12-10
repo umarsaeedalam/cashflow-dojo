@@ -42,17 +42,22 @@ export function getCurrencySymbol(currencyCode: string) {
 
 export function getCategoryColor(category: string) {
     const colors = {
-        'Housing': '#4682B4',            // Steel Blue: Professional, stable
-        'Transportation': '#228B22',      // Forest Green: Movement, efficiency
-        'Food & Dining': '#FF8C00',      // Dark Orange: Warm, appetizing
-        'Healthcare': '#DC143C',         // Crimson: Important, medical
-        'Personal Care': '#DB7093',      // Pale Violet Red: Personal, gentle
-        'Education': '#8A2BE2',          // Blue Violet: Learning, growth
-        'Entertainment & Leisure': '#FFD700', // Gold: Fun, valuable time
-        'Technology': '#708090',         // Slate Gray: Modern, technical
-        'Savings & Investments': '#DAA520', // Goldenrod: Wealth, prosperity
-        'Debt Repayment': '#00008B',     // Dark Blue: Serious, financial
-        'Gifts & Donations': '#008B8B',  // Dark Cyan: Giving, balanced
+        'Housing': '#4A8FE7',
+        'Household Items': '#A0522D',
+        'Utilities': '#7FCDBB',
+        'Groceries': '#2E8B57',
+        'Dining Out': '#FFA07A',
+        'Transportation': '#20B2AA',
+        'Education': '#9370DB',
+        'Wellness & Fitness': '#FF6347',
+        'Beauty & Grooming': '#FF69B4',
+        'Savings & Investments': '#32CD32',
+        'Insurance & Protection': '#708090',
+        'Entertainment & Leisure': '#FFD700',
+        'Travel & Vacation': '#FF4500',
+        'Clothing & Accessories': '#BA55D3',
+        'Technology': '#48D1CC',
+        'Gifts & Donations': '#008080'
     } as const
 
     return colors[category as keyof typeof colors] || '#696969'

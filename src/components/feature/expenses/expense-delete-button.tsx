@@ -25,26 +25,30 @@ function ExpenseDeleteButton({ expense_id }: Props) {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <button className="text-primary border border-accent hover:border-accent-shade bg-accent hover:bg-accent-shade p-2 rounded-md transition-all focus:outline-none focus-visible:outline-secondary ease-in-out duration-200 transform active:scale-90"><FaTrash /></button>
+                <button className="text-dark-700 p-2 hover:text-red-600 text-lg max-[900px]:text-md rounded-md transition-all focus:outline-none focus-visible:outline-accent-500 ease-in-out duration-100 transform active:scale-90"><FaTrash /></button>
             </DialogTrigger>
-            <DialogContent className="max-w-[450px] !rounded-md bg-primary border-primary">
+
+            <DialogContent className="max-w-[450px] !rounded-3xl bg-[#CDD5E0] border-0">
                 <DialogHeader>
-                    <DialogTitle className="text-accent mb-1">Are you absolutely sure?</DialogTitle>
-                    <DialogDescription className="text-secondary ">
+                    <DialogTitle className="text-dark-900 mb-1">Are you absolutely sure?</DialogTitle>
+
+                    <DialogDescription className="text-dark-500">
                         This action cannot be undone. This will permanently delete this
                         expense record from your account.
                     </DialogDescription>
                 </DialogHeader>
+
                 <DialogFooter>
                     <DialogClose asChild>
-                        <Button disabled={isPending} className="border font-semibold rounded-lg border-secondary bg-secondary text-neutral py-2 px- hover:bg-secondary-shade hover:border-secondary-shade focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
+                        <Button disabled={isPending} className="border tracking-wide font-semibold rounded-lg border-dark-700 bg-dark-700 text-light-50 py-2 px-4 hover:bg-dark-500 hover:border-dark-500 focus:outline-none focus-visible:outline-accent-500 transition-colors transform active:scale-90 ease-in-out duration-100">
                             Cancel
                         </Button>
                     </DialogClose>
+                    
                     <Button 
                         onClick={handleCancelSubmit}
                         disabled={isPending} 
-                        className="border font-semibold rounded-lg bg-accent text-primary border-accent py-2 px-4 hover:bg-accent-shade hover:border-accent-shade focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200"
+                        className="border tracking-wide font-semibold rounded-lg bg-red-600 text-light-50 border-red-600 py-2 px-4 hover:bg-red-700 hover:border-red-700 focus:outline-none focus-visible:outline-dark-700 transition-colors transform active:scale-90 ease-in-out duration-100"
                     >
                         {isPending ? "Deleting..." : "Delete"}
                     </Button>

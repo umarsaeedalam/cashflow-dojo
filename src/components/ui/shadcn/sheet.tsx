@@ -22,7 +22,7 @@ const SheetOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Overlay
     className={cn(
-      "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "fixed inset-0 z-50 bg-black/30 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
       className
     )}
     {...props}
@@ -67,7 +67,7 @@ const SheetContent = React.forwardRef<
       {...props}
       
     >
-      <SheetPrimitive.Close className="absolute right-4 top-4 p-1 transition-all ease-in-out duration-200 font-bold rounded-md text-accent hover:bg-accent active:bg-accent hover:text-primary active:text-primary outline-none focus-visible:outline-secondary transform active:scale-90">
+      <SheetPrimitive.Close className="absolute right-4 top-4 p-1 transition-all ease-in-out duration-100 font-bold rounded-md text-dark-700 hover:bg-dark-700 active:bg-accent hover:text-light-50 active:text-primary outline-none focus-visible:outline-dark-700 transform active:scale-90">
         <RxCross2 className="font-bold" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>

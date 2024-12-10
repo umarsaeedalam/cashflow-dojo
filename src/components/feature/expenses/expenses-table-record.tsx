@@ -16,16 +16,16 @@ function ExpensesTableRecord({ expense, currency }: Props) {
     const currencySymbol = getCurrencySymbol(currency);
 
     return (
-        <tr className="text-accent font-semibold max-[1160px]:text-sm">
-            <td className="pl-6 py-4 rounded-l-xl border-secondary border-y-2 border-l-2 max-[515px]:hidden">{expense.name}</td>
+        <tr className="text-accent font-semibold max-[1160px]:text-sm tracking-wide">
+            <td className="pl-6 py-4 border-dark-500 border-b-1 max-[515px]:hidden">{expense.name}</td>
 
-            <td className="text-center border-secondary border-y-2 max-[900px]:hidden"><CategoryLabel category={expense.category} /></td>
+            <td className="text-center border-dark-500 border-b-1 max-[900px]:hidden"><CategoryLabel category={expense.category} /></td>
 
-            <td className="py-4 text-center max-[515px]:text-left max-[515px]:pl-6 border-secondary border-y-2 max-[515px]:border-l-2 max-[515px]:rounded-l-xl">{isMobile ? utcToLocalShorter(expense.date) : utcToLocal(expense.date)}</td>
+            <td className="py-4 text-center max-[515px]:text-left max-[515px]:pl-6 border-dark-500 border-b-1">{isMobile ? utcToLocalShorter(expense.date) : utcToLocal(expense.date)}</td>
 
-            <td className="py-4 text-center border-secondary border-y-2">{`${currencySymbol} ${isMobile ? formatExpenseAmount(expense.amount) : formatExpenseAmount(expense.amount)}`}</td>
+            <td className="py-4 text-center border-dark-500 border-b-1">{`${currencySymbol} ${isMobile ? formatExpenseAmount(expense.amount) : formatExpenseAmount(expense.amount)}`}</td>
 
-            <td className="flex py-3 max-[630px]:pb-4 justify-center rounded-r-xl border-secondary border-y-2 border-r-2">
+            <td className="flex py-3 max-[630px]:pb-4 justify-center border-dark-500 border-b-1">
                 {isMobile ? 
                     <EditAndDeleteButton 
                         expense={expense}

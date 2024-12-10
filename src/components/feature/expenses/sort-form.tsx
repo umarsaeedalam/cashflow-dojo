@@ -47,17 +47,17 @@ function SortForm({ handleSetOpen, dispatch, sortBy, sortDirection }: Props) {
             <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4 py-4">
                 <FormField control={form.control} name="sortBy" render={({ field }) => (
                     <FormItem className="grid grid-cols-4 items-center gap-x-4 gap-y-1">
-                        <FormLabel className="text-right max-[400px]:text-left font-bold">Sort By</FormLabel>
+                        <FormLabel className="text-right max-[400px]:text-left font-bold tracking-wide">Sort By</FormLabel>
 
                         <div className="col-span-3 max-[400px]:col-span-4 space-y-1">
                             <Select onValueChange={field.onChange} value={field.value}>
                                 <FormControl>
-                                    <SelectTrigger className="border-secondary border text-secondary rounded-md focus:outline-none transition-colors ease-in-out duration-200">
+                                    <SelectTrigger className="text-dark-700 bg-light-50 tracking-wide rounded-lg focus:outline-none transition-colors ease-in-out duration-200">
                                         <SelectValue placeholder="Select a category" className="placeholder:!text-stone-400" />
                                     </SelectTrigger>
                                 </FormControl>
 
-                                <SelectContent className="bg-secondary text-neutral rounded-md border-secondary">
+                                <SelectContent className="rounded-lg bg-white backdrop-filter backdrop-blur-sm bg-opacity-30 border-0">
                                     <SelectItem value="Date">Date</SelectItem>
 
                                     <SelectItem value="Amount">Amount</SelectItem>
@@ -71,17 +71,17 @@ function SortForm({ handleSetOpen, dispatch, sortBy, sortDirection }: Props) {
 
                 <FormField control={form.control} name="direction" render={({ field }) => (
                     <FormItem className="grid grid-cols-4 items-center gap-x-4 gap-y-1">
-                        <FormLabel className="text-right max-[400px]:text-left font-bold">Direction</FormLabel>
+                        <FormLabel className="text-right max-[400px]:text-left font-bold tracking-wide">Direction</FormLabel>
 
                         <div className="col-span-3 max-[400px]:col-span-4 space-y-1">
                             <Select onValueChange={field.onChange} value={field.value}>
                                 <FormControl>
-                                    <SelectTrigger className="border-secondary border text-secondary rounded-md focus:outline-none transition-colors ease-in-out duration-200">
+                                    <SelectTrigger className="text-dark-700 bg-light-50 tracking-wide rounded-lg focus:outline-none transition-colors ease-in-out duration-200">
                                         <SelectValue placeholder="Select a direction" className="placeholder:!text-stone-400" />
                                     </SelectTrigger>
                                 </FormControl>
 
-                                <SelectContent className="bg-secondary text-neutral rounded-md border-secondary">
+                                <SelectContent className="rounded-lg bg-white backdrop-filter backdrop-blur-sm bg-opacity-30 border-0">
                                     <SelectItem value="Ascending">Ascending</SelectItem>
 
                                     <SelectItem value="Descending">Descending</SelectItem>
@@ -94,11 +94,11 @@ function SortForm({ handleSetOpen, dispatch, sortBy, sortDirection }: Props) {
                 )}/>
 
                 <div className="flex justify-end space-x-2 mt-2">
-                    <Button type="button" onClick={onClick} className="border font-semibold rounded-lg border-secondary text-neutral bg-secondary py-2 px-4 hover:bg-secondary-shade hover:border-secondary-shade focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
+                    <Button type="button" onClick={onClick} className="border tracking-wide font-semibold rounded-lg border-dark-700 text-light-50 bg-dark-700 py-2 px-4 hover:bg-dark-500 hover:border-dark-500 focus:outline-none focus-visible:outline-accent-500 transition-colors transform active:scale-90 ease-in-out duration-100">
                         Reset
                     </Button>
                     
-                    <Button type="submit" className="border font-semibold rounded-lg bg-accent text-primary border-accent py-2 px-4 hover:bg-accent-shade hover:border-accent-shade focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200">
+                    <Button type="submit" className="border tracking-wide font-semibold rounded-lg bg-accent-500 text-light-50 border-accent-500 py-2 px-4 hover:bg-accent-600 hover:border-accent-600 focus:outline-none focus-visible:outline-dark-700 transition-colors transform active:scale-90 ease-in-out duration-100">
                         Apply
                     </Button>
                 </div>

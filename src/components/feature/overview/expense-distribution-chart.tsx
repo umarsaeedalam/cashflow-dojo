@@ -14,7 +14,7 @@ type Props = {
 
 const chartConfig = {
     expense: { label: "Total Expenses" },
-    expenses: { label: "expenses", color: "#ea5166" },
+    expenses: { label: "expenses", color: "#0d0d0d" },
 } satisfies ChartConfig
 
 const TICK_POSITIONS = {
@@ -49,14 +49,14 @@ function ExpenseDistributionChart({ chartData }: Props) {
     }, [chartData]);
 
     return (
-        <Card className="border-secondary bg-primary shadow-none text-accent border-2 rounded-xl">
-            <CardContent className="p-2 sm:p-6">
-                <ChartContainer config={chartConfig} className="aspect-auto h-80 w-full pt-4">
+        <Card className=" bg-transparent border-0 shadow-none text-accent rounded-3xl">
+            <CardContent className="p-0">
+                <ChartContainer config={chartConfig} className="aspect-auto h-80 w-full">
                     <BarChart accessibilityLayer data={chartData} margin={{ left: 0, right: 0, top: 0, bottom: 0 }}>
                         <CartesianGrid 
                             vertical={false} 
                             horizontal={true}
-                            stroke="#f295a3" 
+                            stroke="#808080" 
                         />
 
                         <XAxis
@@ -79,9 +79,10 @@ function ExpenseDistributionChart({ chartData }: Props) {
                                     y={y} 
                                     dy={8} 
                                     textAnchor="middle" 
-                                    fill="#ea5166" 
+                                    fill="#333333" 
                                     fontSize={12}
-                                    fontWeight="bold"   
+                                    fontWeight="bold"
+                                    letterSpacing="0.025em"   
                                 >
                                     {new Date(payload.value).toLocaleDateString("en-US", {
                                         month: "short",
@@ -94,7 +95,7 @@ function ExpenseDistributionChart({ chartData }: Props) {
                         <ChartTooltip
                             content={
                                 <ChartTooltipContent
-                                    className="w-[12rem] pr-5"
+                                    className="w-[12rem] pr-5 bg-white backdrop-filter backdrop-blur-sm bg-opacity-50 border-0 text-dark-700 tracking-wide"
                                     nameKey="expense"
                                     labelFormatter={(value) => {
                                         return new Date(value).toLocaleDateString("en-US", {
@@ -113,7 +114,7 @@ function ExpenseDistributionChart({ chartData }: Props) {
                             stroke="var(--color-expenses)"
                             fill="var(--color-expenses)"
                             fillOpacity={1}
-                            radius={[3, 3, 0, 0]}
+                            radius={[1, 1, 0, 0]}
                         />
                     </BarChart>
                 </ChartContainer>

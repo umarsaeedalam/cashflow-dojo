@@ -18,24 +18,24 @@ function LatestExpense({ expense, currency }: Props) {
     const isTablet = useMediaQuery('(max-width: 1160px)');
 
     return (
-        <div className="flex flex-col gap-1 pt-2 pb-3 px-2 mb-3 border-2 border-secondary font-semibold rounded-xl">
-            <div className="text-xs pl-2 text-secondary">{dayjs(formattedDate).format("D MMMM, YYYY")}</div>
+        <div className="flex flex-col gap-1 border-b-1 border-dark-500 pt-[7px] pb-[13px] px-2 mb-3 font-semibold">
+            <div className="text-xs pl-2 text-dark-700 tracking-wide">{dayjs(formattedDate).format("D MMMM, YYYY")}</div>
 
             <div className="flex gap-4 px-6 mt-1">
                 {!isTablet && 
-                    <div className="h-11 w-11 flex justify-center items-center rounded-md" style={{ backgroundColor: getCategoryColor(expense.category) }}>
+                    <div className="h-11 w-11 flex justify-center items-center rounded-xl" style={{ backgroundColor: getCategoryColor(expense.category) }}>
                         <CategoryIcon category={expense.category} />
                     </div> 
                 }
 
                 <div className="flex flex-col grow">
                     <div className="flex justify-between items-center text-accent">
-                        <p className="text-base">{expense.name}</p>
+                        <p className="text-base tracking-wide text-dark-900">{expense.name}</p>
 
-                        <p className="text-base">{`${currencySymbol} ${amount}`}</p>
+                        <p className="text-base tracking-wide text-dark-900">{`${currencySymbol} ${amount}`}</p>
                     </div>
                     
-                    <div className={"text-xs text-secondary-tint"}>{expense.category}</div>
+                    <div className={"text-xs text-dark-500 tracking-wide"}>{expense.category}</div>
                 </div>
             </div>
         </div>

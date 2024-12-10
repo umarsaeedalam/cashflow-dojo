@@ -25,11 +25,11 @@ function ExpensesPagination({ pageCount, currentPage, dispatch, userId }: Props)
 
     const paginationSx = {
         '& .MuiPagination-ul': {
-            gap: isMobile ? '0.25rem' : '0.35rem',
+            gap: isMobile ? '0.1rem' : '0.35rem',
         },
         '& .MuiPaginationItem-root': {
             fontFamily: 'inherit',
-            color: '#ea5166',
+            color: '#333333',
             fontWeight: 600,
             fontSize: isMobile ? '0.75rem' : '0.875rem',
             padding: isMobile ? '0.60rem' : '0.80rem',
@@ -38,32 +38,32 @@ function ExpensesPagination({ pageCount, currentPage, dispatch, userId }: Props)
             minWidth: 'auto',
             border: '2px solid transparent',
             '&:hover': {
-                backgroundColor: '#ea5166',
-                color: '#bde9c9',
+                backgroundColor: '#333333',
+                color: '#fafcfd',
             },
             '&.Mui-selected': {
-                backgroundColor: '#ea5166',
-                color: '#bde9c9',
-                border: '1px solid #ea5166',
+                backgroundColor: '#333333',
+                color: '#fafcfd',
+                border: '1px solid #333333',
                 '&:hover': {
-                    backgroundColor: '#ea5166',
-                    color: '#bde9c9',
+                    backgroundColor: '#333333',
+                    color: '#fafcfd',
                 },
             },
         },
         '& .MuiPaginationItem-previousNext': {
             '&:hover': {
-                backgroundColor: '#ea5166',
-                color: '#bde9c9',
+                backgroundColor: '#333333',
+                color: '#fafcfd',
             },
         },
         '& .MuiPaginationItem-ellipsis': {
-            color: '#ea5166',
+            color: '#333333',
             fontSize: isMobile ? '0.75rem' : '0.875rem',
             padding: isMobile ? '0.60rem' : '0.80rem',
             '&:hover': {
                 backgroundColor: 'transparent',
-                color: '#ea5166',
+                color: '#333333',
                 cursor: 'default',
             },
         },

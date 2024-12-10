@@ -23,7 +23,7 @@ function LatestExpenses({ userId, currency, allExpenses }: Props) {
     return(
         <div className="pt-4 rounded-3xl">
             <div className="flex justify-between items-center pb-4 max-[1280px]:pb-4">
-                <h2 className="text-xl max-[1400px]:text-lg font-bold">Recent Expenses</h2>
+                <h2 className="text-xl max-[1400px]:text-lg font-bold tracking-wide">Recent Expenses</h2>
 
                 <AddExpenseButton userId={userId} />
             </div>

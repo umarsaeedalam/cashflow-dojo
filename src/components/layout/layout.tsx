@@ -6,7 +6,7 @@ import { useMediaQuery } from '@react-hook/media-query'
 import Header from "@/components/layout/header"
 import NavBar from "./nav-bar"
 import { User } from "@/utils/types"
-import logo from '../../../public/android-chrome-512x512.png'
+import logo from '../../../public/file.png'
 
 
 type Props = {

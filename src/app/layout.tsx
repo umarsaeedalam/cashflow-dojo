@@ -7,6 +7,11 @@ const local = localFont({
     display: 'swap',
 })
 
+// const local = localFont({
+//     src: '../fonts/barlow/Barlow-Regular.ttf',
+//     display: 'swap',
+// })
+
 const metadata: Metadata = {
     metadataBase: new URL('http://localhost:3000'),
     title: { 
@@ -55,7 +60,7 @@ const metadata: Metadata = {
 function RootLayout({ children, }: Readonly<{children: React.ReactNode;}>) {
     return (
         <html lang="en">
-            <body className={`${local.className} h-svh bg-primary text-secondary`}>
+            <body className={`${local.className} h-svh bg-custom-gradient`}>
                 {children}
             </body>
         </html>

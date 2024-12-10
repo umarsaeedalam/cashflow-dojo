@@ -77,7 +77,7 @@ export async function fetchLatestExpenses(userId: string) {
  * Includes validation of current page number
  */
 export async function fetchAllUserExpenses(userId: string, currentPage: number) {
-    const PAGE_SIZE = 9
+    const PAGE_SIZE = 10
 
     // Fetch all expenses sorted by date
     const expenses = await prisma.expense.findMany({

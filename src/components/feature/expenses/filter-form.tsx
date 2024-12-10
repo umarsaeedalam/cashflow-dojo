@@ -75,7 +75,7 @@ function FilterForm({ handleSetOpen, dispatch, currency, minAmount, maxAmount, f
             <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4 py-4">
                 <FormField control={form.control} name="categories" render={({ field }) => (
                     <FormItem className="grid grid-cols-4 items-start gap-x-4 gap-y-3">
-                        <FormLabel className="text-right max-[425px]:text-left font-bold pt-2">Categories</FormLabel>
+                        <FormLabel className="text-right max-[425px]:text-left font-bold pt-2 tracking-wide">Categories</FormLabel>
 
                         <div className="col-span-3 max-[425px]:col-span-4 space-y-1 !mt-0">
                             <FormControl>
@@ -84,7 +84,7 @@ function FilterForm({ handleSetOpen, dispatch, currency, minAmount, maxAmount, f
                                     onChange={(options) => field.onChange(options.map(option => option.value))}
                                     defaultOptions={CATEGORY_OPTIONS}
                                     placeholder="Select categories to filter"
-                                    className="bg-primary border rounded-md border-secondary mt-0 outline-none"
+                                    className="bg-light-50 rounded-lg mt-0 outline-none"
                                     hidePlaceholderWhenSelected
                                     emptyIndicator={
                                         <p className="text-center">No categories found.</p>}
@@ -98,7 +98,7 @@ function FilterForm({ handleSetOpen, dispatch, currency, minAmount, maxAmount, f
 
                 <FormField control={form.control} name="amountRange" render={({ field }) => (
                     <FormItem className="grid grid-cols-4 items-center gap-x-4 gap-y-2">
-                        <FormLabel className="text-right max-[425px]:text-left font-bold">Amount</FormLabel>
+                        <FormLabel className="text-right max-[425px]:text-left font-bold tracking-wide">Amount</FormLabel>
 
                         <div className="col-span-3 max-[425px]:col-span-4 space-y-1">
                             <DualRangeSlider
@@ -106,7 +106,7 @@ function FilterForm({ handleSetOpen, dispatch, currency, minAmount, maxAmount, f
                                 onValueChange={field.onChange}
                                 min={minAmount}
                                 max={maxAmount}
-                                className="text-secondary"
+                                className="text-dark-700 tracking-wide"
                                 step={calculateIdealStep(minAmount, maxAmount)}
                             />
 
@@ -123,11 +123,11 @@ function FilterForm({ handleSetOpen, dispatch, currency, minAmount, maxAmount, f
 
                 <FormField control={form.control} name="dateRange" render={({ field }) => (
                     <FormItem className="grid grid-cols-4 items-center gap-x-4 gap-y-1">
-                        <FormLabel className="text-right max-[425px]:text-left font-bold">Date</FormLabel>
+                        <FormLabel className="text-right max-[425px]:text-left font-bold tracking-wide">Date</FormLabel>
 
                         <div className="col-span-3 max-[425px]:col-span-4 space-y-1">
                             <Popover>
-                                <PopoverTrigger asChild className="bg-primary border border-secondary text-secondary rounded-md placeholder:text-secondary/50 focus:outline-none focus-visible:!outline-sage-800">
+                                <PopoverTrigger asChild className="bg-light-50 text-dark-700 rounded-lg placeholder:text-dark-300">
                                     <FormControl>
                                         <Button id="date" variant={"outline"} className={cn("w-full justify-start text-left font-normal", !field.value && "text-muted-foreground")}>
                                             <CalendarIcon className="mr-2 h-4 w-4 opacity-100" />
@@ -148,7 +148,7 @@ function FilterForm({ handleSetOpen, dispatch, currency, minAmount, maxAmount, f
                                     </FormControl>
                                 </PopoverTrigger>
 
-                                <PopoverContent className="w-auto p-0 rounded-md border-secondary bg-secondary" align="start">
+                                <PopoverContent className="w-auto p-0 rounded-lg bg-white backdrop-filter backdrop-blur-sm bg-opacity-30 border-0" align="start">
                                     <Calendar
                                         initialFocus
                                         mode="range"
@@ -163,7 +163,7 @@ function FilterForm({ handleSetOpen, dispatch, currency, minAmount, maxAmount, f
                                         }}
                                         numberOfMonths={1}
                                         disabled={(date) => date > new Date()}
-                                        className="rounded-md border-secondary bg-secondary"
+                                        className="rounded-lg bg-white backdrop-filter backdrop-blur-sm bg-opacity-30 border-0"
                                     />
                                 </PopoverContent>
                             </Popover>
@@ -174,11 +174,11 @@ function FilterForm({ handleSetOpen, dispatch, currency, minAmount, maxAmount, f
                 )}/>
 
                 <div className="flex justify-end space-x-2 mt-2">
-                    <Button type="button" onClick={onClick} className="border font-semibold rounded-lg border-secondary bg-secondary text-neutral py-2 px-4 hover:bg-secondary-shade hover:border-secondary-shadee focus:outline-none focus-visible:outline-accent transition-colors transform active:scale-90 ease-in-out duration-200">
+                    <Button type="button" onClick={onClick} className="border tracking-wide font-semibold rounded-lg border-dark-700 bg-dark-700 text-light-50 py-2 px-4 hover:bg-dark-500 hover:border-dark-500 focus:outline-none focus-visible:outline-accent-500 transition-colors transform active:scale-90 ease-in-out duration-100">
                         Reset
                     </Button>
                     
-                    <Button type="submit" className="border font-semibold rounded-lg bg-accent text-primary border-accent py-2 px-4 hover:bg-accent-shade hover:border-accent-shade focus:outline-none focus-visible:outline-secondary transition-colors transform active:scale-90 ease-in-out duration-200">
+                    <Button type="submit" className="border tracking-wide font-semibold rounded-lg bg-accent-500 text-light-50 border-accent-500 py-2 px-4 hover:bg-accent-600 hover:border-accent-600 focus:outline-none focus-visible:outline-dark-700 transition-colors transform active:scale-90 ease-in-out duration-100">
                         Apply
                     </Button>
                 </div>

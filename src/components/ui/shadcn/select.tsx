@@ -44,7 +44,7 @@ const SelectScrollUpButton = React.forwardRef<
   <SelectPrimitive.ScrollUpButton
     ref={ref}
     className={cn(
-      "flex text-neutral cursor-default items-center justify-center py-1",
+      "flex text-dark-700 cursor-default items-center justify-center py-1",
       className
     )}
     {...props}
@@ -61,7 +61,7 @@ const SelectScrollDownButton = React.forwardRef<
   <SelectPrimitive.ScrollDownButton
     ref={ref}
     className={cn(
-      "flex text-neutral cursor-default items-center justify-center py-1",
+      "flex text-dark-700 cursor-default items-center justify-center py-1",
       className
     )}
     {...props}
@@ -123,7 +123,7 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center text-neutral rounded-md border border-secondary hover:text-secondary hover:bg-primary hover:border-primary transition-all ease-in-out duration-200 py-1.5 pl-2 pr-8 text-sm outline-none  data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-800 dark:focus:text-neutral-50",
+      "relative flex w-full cursor-default select-none tracking-wide items-center text-dark-700 rounded-md hover:bg-accent-300 hover:text-light-50 data-[state=checked]:bg-accent-500 data-[state=checked]:text-light-50 transition-all ease-in-out duration-100 py-1.5 pl-2 pr-8 text-sm outline-none  data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-800 dark:focus:text-neutral-50",
       className
     )}
     {...props}

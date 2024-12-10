@@ -16,12 +16,12 @@ function ExpenseEditButton({ expense }: Props) {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <button className="text-primary border border-accent hover:border-accent-shade bg-accent hover:bg-accent-shade p-2 rounded-md transition-all focus:outline-none focus-visible:outline-secondary ease-in-out duration-200 transform active:scale-90"><FaEdit /></button>
+                <button className="text-dark-700 hover:text-dark-500 text-lg max-[900px]:text-md rounded-md transition-all focus:outline-none focus-visible:outline-accent-500 ease-in-out duration-100 transform active:scale-90"><FaEdit /></button>
             </DialogTrigger>
 
-            <DialogContent className="max-w-[450px] !rounded-md bg-primary border-primary">
+            <DialogContent className="max-w-[450px] !rounded-3xl bg-[#CDD5E0] border-0">
                 <DialogHeader>
-                    <DialogTitle className="max-[400px]:text-center">Edit Expesnse</DialogTitle>
+                    <DialogTitle className="max-[400px]:text-center tracking-wide">Edit Expesnse</DialogTitle>
                 </DialogHeader>
                 
                 <ExpenseEditForm 

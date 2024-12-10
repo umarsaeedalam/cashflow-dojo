@@ -22,7 +22,7 @@ const DialogOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "fixed inset-0 z-50 bg-black/30 backdrop-blur-sm  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
       className
     )}
     {...props}
@@ -46,7 +46,7 @@ const DialogContent = React.forwardRef<
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="absolute right-4 top-4 p-1 transition-colors ease-in-out duration-200 font-bold rounded-md text-accent border border-primary bg-primary hover:bg-accent hover:text-primary focus:outline-none focus-visible:outline-secondary disabled:pointer-events-none data-[state=open]:bg-neutral-100">
+      <DialogPrimitive.Close className="absolute right-4 top-4 p-1 transition-colors ease-in-out duration-100 font-bold rounded-md text-accent bg-transparent hover:bg-dark-700 text-dark-700 hover:text-light-50 focus:outline-none focus-visible:outline-dark-700 disabled:pointer-events-none data-[state=open]:bg-neutral-100">
         <RxCross2 className="font-bold" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>

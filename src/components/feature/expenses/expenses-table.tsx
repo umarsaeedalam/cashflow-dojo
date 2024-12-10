@@ -18,7 +18,7 @@ type Props = {
     userId: string;
 }
 
-const ITEMS_PER_PAGE = 9;
+const ITEMS_PER_PAGE = 10;
 
 function ExpensesTable({ expenses, currency, pageCount, dispatch, currentPage, userId }: Props) {
     const isMobile = useMediaQuery('(max-width: 630px)')
@@ -47,32 +47,32 @@ function ExpensesTable({ expenses, currency, pageCount, dispatch, currentPage, u
 
     return (
         <>
-            <table className="w-full table-auto border-separate border-spacing-y-2 text-left mt-2">
+            <table className="w-full table-auto border-separate border-spacing-y-0 text-left mt-6 max-[1160px]:mt-5 max-[630px]:mt-4">
                 <thead className="tracking-wider uppercase text-sm max-[1160px]:text-xs max-[630px]:text-[0.67rem] font-bold">
-                    <tr>
-                        <th className="px-6 py-3 w-1/4 max-[900px]:w-1/3 max-[630px]:w-[40%] max-[515px]:hidden">Description</th>
+                    <tr className="font-semibold text-dark-900">
+                        <th className="px-6 py-4 max-[1160px]:py-[18px] max-[630px]:py-[19px] w-1/4 rounded-l-2xl max-[900px]:w-1/3 max-[630px]:w-[40%] max-[515px]:hidden bg-white backdrop-filter backdrop-blur-sm bg-opacity-50">Description</th>
 
-                        <th className="py-3 w-1/6 text-center max-[900px]:hidden">Category</th>
+                        <th className="py-3 w-1/6 text-center max-[900px]:hidden bg-white backdrop-filter backdrop-blur-sm bg-opacity-50">Category</th>
 
-                        <th className="py-3 w-1/4 max-[900px]:w-1/3 max-[630px]:w-[25%] max-[515px]:w-[30%] text-center max-[515px]:text-left max-[515px]:pl-8">Date</th>
+                        <th className="py-3 max-[515px]:rounded-l-2xl w-1/4 max-[900px]:w-1/3 max-[630px]:w-[25%] max-[515px]:w-[30%] text-center max-[515px]:text-left max-[515px]:pl-8 bg-white backdrop-filter backdrop-blur-sm bg-opacity-50">Date</th>
 
-                        <th className="py-3 w-1/6 max-[900px]:w-1/6 max-[630px]:w-[25%] max-[515px]:w-[50%] text-center">Amount</th>
+                        <th className="py-3 w-1/6 max-[900px]:w-1/6 max-[630px]:w-[25%] max-[515px]:w-[50%] text-center bg-white backdrop-filter backdrop-blur-sm bg-opacity-50">Amount</th>
 
-                        <th className="py-3 w-1/6 max-[900px]:w-1/6 max-[630px]:w-[10%] max-[515px]:w-[20%] text-center">Actions</th>
+                        <th className="py-3 rounded-r-2xl w-1/6 max-[900px]:w-1/6 max-[630px]:w-[10%] max-[630px]:text-transparent max-[515px]:w-[20%] max-[515px]:text-dark-700 text-center bg-white backdrop-filter backdrop-blur-sm bg-opacity-50">Actions</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     {displayedExpenses.map((expense) =>
                         expense.expense_id === 'total' ? (
-                            <tr key="total" className="text-accent font-bold">
-                                <td className="pl-6 py-4 rounded-l-xl border-accent  border-y-2 border-l-2 max-[515px]:hidden">{expense.name}</td>
+                            <tr key="total" className="text-accent-500 font-bold tracking-wide">
+                                <td className="pl-6 py-4 max-[515px]:hidden">{expense.name}</td>
 
-                                <td className="border-accent  border-y-2  max-[900px]:hidden"></td>
+                                <td className="max-[900px]:hidden"></td>
 
-                                <td className="py-4 border-accent  border-y-2 text-center max-[515px]:text-left max-[515px]:pl-6 max-[515px]:border-l-2 max-[515px]:rounded-l-xl"> {isMobile2 && expense.name}</td>
+                                <td className="py-4 text-center max-[515px]:text-left max-[515px]:pl-6"> {isMobile2 && expense.name}</td>
 
-                                <td className="py-4 text-center border-accent  border-y-2 max-[1160px]:text-sm">
+                                <td className="py-4 text-center max-[1160px]:text-sm">
                                     {`${currencySymbol} ${formatExpenseAmount(expense.amount)}`}
                                 </td>
 

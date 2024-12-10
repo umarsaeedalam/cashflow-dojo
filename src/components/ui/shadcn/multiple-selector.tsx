@@ -455,7 +455,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                   key={option.value}
                   className={cn(
                     'data-[disabled]:bg-muted-foreground data-[disabled]:text-muted data-[disabled]:hover:bg-muted-foreground',
-                    'rounded-md bg-primary border font-normal border-secondary text-secondary',
+                    'rounded-lg tracking-wide bg-dark-700 border font-normal border-dark-700 text-light-50',
                     badgeClassName,
                   )}
                   data-fixed={option.fixed}
@@ -509,7 +509,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
               }}
               placeholder={hidePlaceholderWhenSelected && selected.length !== 0 ? '' : placeholder}
               className={cn(
-                'flex-1 bg-transparent outline-none placeholder:text-secondary',
+                'flex-1 bg-transparent outline-none placeholder:text-dark-700 tracking-wide',
                 {
                   'w-full': hidePlaceholderWhenSelected,
                   'px-3 py-2': selected.length === 0,
@@ -525,7 +525,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                 onChange?.(selected.filter((s) => s.fixed));
               }}
               className={cn(
-                'absolute right-1 p-2 rounded-md hover:bg-primary transition-colors ease-in duration-200 group',
+                'absolute text-dark-700 right-1 p-1 rounded-full hover:bg-dark-700 hover:text-light-50 transition-colors ease-in duration-100 group',
                 (hideClearAllButton ||
                   disabled ||
                   selected.length < 1 ||
@@ -534,7 +534,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
               )}
             >
                 <span className="flex items-center justify-center w-3 h-3">
-                    <RxCross2 className='text-base text-secondary rounded-md' />
+                    <RxCross2 className='text-base text-dark rounded-full' />
                 </span>
             </button>
           </div>
@@ -542,7 +542,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
         <div className="relative">
           {open && (
             <CommandList
-              className="absolute top-1 z-10 w-full rounded-md border-secondary !bg-secondary text-neutral outline-none animate-in"
+              className="absolute top-1 z-10 w-full rounded-lg bg-white backdrop-filter backdrop-blur-sm bg-opacity-50 border-0 text-dark-700 outline-none animate-in"
               onMouseLeave={() => {
                 setOnScrollbar(false);
               }}
@@ -584,7 +584,7 @@ const MultipleSelector = React.forwardRef<MultipleSelectorRef, MultipleSelectorP
                                 onChange?.(newOptions);
                               }}
                               className={cn(
-                                'cursor-default text-neutral !bg-secondary hover:!bg-primary hover:text-secondary rounded-md transition-all ease-in !duration-100',
+                                'cursor-default text-dark-700 !bg-transparent hover:!bg-accent-500 hover:text-light-50 rounded-md transition-all ease-in !duration-100',
                                 option.disable && 'cursor-not-allowed',
                               )}
                             >

@@ -45,10 +45,10 @@ function ProfileForm({ user, handleSetOpen}: Props) {
             <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4 py-4">
                 <FormField control={form.control} name="username" render={({ field }) => (
                     <FormItem className="grid grid-cols-4 items-center gap-4 gap-y-1">
-                        <FormLabel className="max-[500px]:text-sm text-right max-[500px]:text-left font-bold">Username</FormLabel>
+                        <FormLabel className="max-[500px]:text-sm text-right max-[500px]:text-left font-bold tracking-wide">Username</FormLabel>
 
                         <FormControl className="col-span-3 max-[500px]:col-span-4">
-                            <Input placeholder="Username" {...field} className="bg-primary border border-secondary text-secondary rounded-md max-[500px]:text-sm placeholder:text-secondary/50 !outline-none" />
+                            <Input placeholder="Username" {...field} className="bg-light-50 rounded-lg max-[500px]:text-sm placeholder:text-dark-300 !outline-none tracking-wide" />
                         </FormControl>
 
                         <FormMessage className="col-span-4"/>
@@ -58,10 +58,10 @@ function ProfileForm({ user, handleSetOpen}: Props) {
 
                 <FormField control={form.control} name="email" render={({ field }) => (
                     <FormItem className="grid grid-cols-4 items-center gap-4 gap-y-1 outline-none focus-visible:!outline-accent">
-                        <FormLabel className="max-[500px]:text-sm text-right max-[500px]:text-left font-bold">Email</FormLabel>
+                        <FormLabel className="max-[500px]:text-sm text-right max-[500px]:text-left font-bold tracking-wide">Email</FormLabel>
 
                         <FormControl className="col-span-3 max-[500px]:col-span-4">
-                            <Input placeholder="Email" {...field} disabled className="bg-primary border border-secondary text-secondary rounded-md max-[500px]:text-sm placeholder:text-secondary/50 !outline-none" />
+                            <Input placeholder="Email" {...field} disabled className="bg-light-50 rounded-lg tracking-wide max-[500px]:text-sm placeholder:text-dark-300 !outline-none" />
                         </FormControl>
 
                         <FormMessage className="col-span-4"/>
@@ -70,16 +70,16 @@ function ProfileForm({ user, handleSetOpen}: Props) {
 
                 <FormField control={form.control} name="currency" render={({ field }) => (
                     <FormItem className="grid grid-cols-4 items-center gap-4 gap-y-1">
-                        <FormLabel className="max-[500px]:text-sm text-right max-[500px]:text-left font-bold">Currency</FormLabel>
+                        <FormLabel className="max-[500px]:text-sm text-right max-[500px]:text-left font-bold tracking-wide">Currency</FormLabel>
 
                         <Select onValueChange={field.onChange} value={field.value}>
                             <FormControl>
-                                <SelectTrigger className="max-[500px]:text-sm col-span-3 max-[500px]:col-span-4 border rounded-md bg-primary border-secondary py-1 px-3 transition-colors ease-in-out duration-200 flex gap-4 focus:outline-none">
+                                <SelectTrigger className="max-[500px]:text-sm col-span-3 max-[500px]:col-span-4 rounded-lg tracking-wide bg-light-50 py-1 px-3 transition-colors ease-in-out duration-200 flex gap-4 focus:outline-none">
                                     <SelectValue placeholder="Currency" />
                                 </SelectTrigger>
                             </FormControl>
                             
-                            <SelectContent className="rounded-md bg-secondary" onWheel={(e) => e.stopPropagation()} onTouchStart={(e) => e.stopPropagation()} onTouchMove={(e) => e.stopPropagation()}>
+                            <SelectContent className="rounded-lg bg-white backdrop-filter backdrop-blur-sm bg-opacity-30 border-0 border-white/30" onWheel={(e) => e.stopPropagation()} onTouchStart={(e) => e.stopPropagation()} onTouchMove={(e) => e.stopPropagation()}>
                                 <SelectItem value="AED">UAE Dirham (AED)</SelectItem>
                                 <SelectItem value="AUD">Australian Dollar (AUD)</SelectItem>
                                 <SelectItem value="BRL">Brazilian Real (BRL)</SelectItem>
@@ -106,7 +106,7 @@ function ProfileForm({ user, handleSetOpen}: Props) {
                     )}/>
 
                 <div className="flex justify-end">
-                    <Button type="submit" disabled={isPending} className="bg-accent hover:bg-accent-shade font-semibold text-primary border-2 rounded-lg mt-2 text-right border-accent hover:border-accent-shade !outline-none focus-visible:!outline-secondary transition-all ease-in-out duration-200 transform active:scale-90">{isPending ? 'Updating...' : 'Save'}</Button>
+                    <Button type="submit" disabled={isPending} className="bg-accent-500 hover:bg-accent-600 tracking-wide font-semibold text-light-50 border-0 rounded-lg mt-2 text-right !outline-none focus-visible:!outline-dark-700 transition-all ease-in-out duration-100 transform active:scale-90">{isPending ? 'Updating...' : 'Save'}</Button>
                 </div>
             </form>
         </Form>

@@ -22,16 +22,16 @@ const DualRangeSlider = React.forwardRef<
       className={cn('relative flex w-full touch-none select-none items-center', className)}
       {...props}
     >
-      <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-md bg-primary border border-secondary">
-        <SliderPrimitive.Range className="absolute h-full bg-secondary border border-secondary" />
+      <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden cursor-pointer rounded-lg bg-light-50 border border-dark-700">
+        <SliderPrimitive.Range className="absolute h-full bg-dark-700 cursor-pointer border border-dark-700" />
       </SliderPrimitive.Track>
       {initialValue.map((value, index) => (
         <React.Fragment key={index}>
-          <SliderPrimitive.Thumb className="relative block h-3 w-3 rounded-md border border-secondary bg-primary ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+          <SliderPrimitive.Thumb className="relative block h-4 w-4 rounded-full border-3 border-dark-700 bg-light-50 ring-offset-background transition-colors cursor-grab active:cursor-grabbing active:border-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
             {label && (
               <span
                 className={cn(
-                  'absolute flex w-full justify-center',
+                  'absolute flex w-full justify-center font-bold',
                   labelPosition === 'top' && '-top-7',
                   labelPosition === 'bottom' && 'top-4',
                 )}

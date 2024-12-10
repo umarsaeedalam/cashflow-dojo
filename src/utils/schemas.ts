@@ -2,16 +2,21 @@ import { z } from "zod"
 
 const categories = [
     'Housing',
+    'Household Items',
+    'Utilities',
+    'Groceries',
+    'Dining Out',
     'Transportation', 
-    'Food & Dining', 
-    'Healthcare', 
-    'Personal Care', 
-    'Education', 
-    'Entertainment & Leisure', 
-    'Technology', 
+    'Education',
+    'Wellness & Fitness',
+    'Beauty & Grooming',
     'Savings & Investments', 
-    'Debt Repayment', 
-    'Gifts & Donations'
+    'Insurance & Protection',
+    'Entertainment & Leisure', 
+    'Travel & Vacation',
+    'Clothing & Accessories',
+    'Technology',
+    'Gifts & Donations',
 ] as const
 
 // Validates dates, ensuring they're not in the future (with 5-min buffer)
