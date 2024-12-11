@@ -7,11 +7,6 @@ const local = localFont({
     display: 'swap',
 })
 
-// const local = localFont({
-//     src: '../fonts/barlow/Barlow-Regular.ttf',
-//     display: 'swap',
-// })
-
 const metadata: Metadata = {
     metadataBase: new URL('http://localhost:3000'),
     title: { 

@@ -3,11 +3,6 @@ import localFont from 'next/font/local'
 import { FaGoogle, FaGithub } from "react-icons/fa"
 import { signInGoogle, signInGithub } from "@/lib/actions"
 
-// const local = localFont({
-//     src: '../fonts/handbuck/HandbuckRegular-R99xE.otf',
-//     display: 'swap',
-// })
-
 const local = localFont({
     src: '../fonts/publica-sans/PublicaSans-Bold.otf',
     display: 'swap',
