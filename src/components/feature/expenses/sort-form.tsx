@@ -52,14 +52,13 @@ function SortForm({ handleSetOpen, dispatch, sortBy, sortDirection }: Props) {
                         <div className="col-span-3 max-[400px]:col-span-4 space-y-1">
                             <Select onValueChange={field.onChange} value={field.value}>
                                 <FormControl>
-                                    <SelectTrigger className="text-dark-700 bg-light-50 tracking-wide rounded-lg focus:outline-none transition-colors ease-in-out duration-200">
+                                    <SelectTrigger className="text-dark-700 bg-light-50 rounded-lg focus:outline-none transition-colors ease-in-out duration-200">
                                         <SelectValue placeholder="Select a category" className="placeholder:!text-stone-400" />
                                     </SelectTrigger>
                                 </FormControl>
 
                                 <SelectContent className="rounded-lg bg-white backdrop-filter backdrop-blur-sm bg-opacity-30 border-0">
                                     <SelectItem value="Date">Date</SelectItem>
-
                                     <SelectItem value="Amount">Amount</SelectItem>
                                 </SelectContent>
                             </Select>
@@ -76,7 +75,7 @@ function SortForm({ handleSetOpen, dispatch, sortBy, sortDirection }: Props) {
                         <div className="col-span-3 max-[400px]:col-span-4 space-y-1">
                             <Select onValueChange={field.onChange} value={field.value}>
                                 <FormControl>
-                                    <SelectTrigger className="text-dark-700 bg-light-50 tracking-wide rounded-lg focus:outline-none transition-colors ease-in-out duration-200">
+                                    <SelectTrigger className="text-dark-700 bg-light-50 rounded-lg focus:outline-none transition-colors ease-in-out duration-200">
                                         <SelectValue placeholder="Select a direction" className="placeholder:!text-stone-400" />
                                     </SelectTrigger>
                                 </FormControl>

@@ -57,7 +57,7 @@ function ExpenseEditForm({ expense, handleSetOpen }: Props) {
 
                         <div className="col-span-3 max-[400px]:col-span-4 space-y-1">
                             <FormControl>
-                                <Input placeholder="Enter expense description" {...field} className="tracking-wide text-dark-700 rounded-lg bg-light-50 max-[500px]:text-sm placeholder:text-dark-300 focus:!outline-none" />
+                                <Input placeholder="Enter expense description" {...field} className="text-dark-700 rounded-lg bg-light-50 max-[500px]:text-sm placeholder:text-dark-300 focus:!outline-none" />
                             </FormControl>
 
                             <FormMessage className="text-red-600 text-xs" />
@@ -67,11 +67,11 @@ function ExpenseEditForm({ expense, handleSetOpen }: Props) {
 
                 <FormField control={form.control} name="amount" render={({ field }) => (
                     <FormItem className="grid grid-cols-4 items-center gap-x-4 gap-y-1">
-                        <FormLabel className="text-right max-[400px]:text-left font-bold tracking-wide">Amount</FormLabel>
+                        <FormLabel className="text-right max-[400px]:text-left font-bold ">Amount</FormLabel>
 
                         <div className="col-span-3 max-[400px]:col-span-4 space-y-1">
                             <FormControl>
-                                <Input type="number" placeholder="Enter amount" {...field} className="max-[500px]:text-sm text-dark-700 tracking-wide bg-light-50 rounded-lg placeholder:text-dark-300 focus:!outline-none" />
+                                <Input type="number" placeholder="Enter amount" {...field} className="max-[500px]:text-sm text-dark-700 bg-light-50 rounded-lg placeholder:text-dark-300 focus:!outline-none" />
                             </FormControl>
 
                             <FormMessage className="text-red-600 text-xs" />
@@ -118,7 +118,7 @@ function ExpenseEditForm({ expense, handleSetOpen }: Props) {
                         <div className="col-span-3 max-[400px]:col-span-4 space-y-1">
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
-                                    <SelectTrigger className="text-dark-700 bg-light-50 tracking-wide rounded-lg focus:outline-none transition-colors ease-in-out duration-200">
+                                    <SelectTrigger className="text-dark-700 bg-light-50 rounded-lg focus:outline-none transition-colors ease-in-out duration-200">
                                         <SelectValue placeholder="Select a category" />
                                     </SelectTrigger>
                                 </FormControl>

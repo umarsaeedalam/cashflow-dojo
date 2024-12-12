@@ -48,7 +48,7 @@ function ProfileForm({ user, handleSetOpen}: Props) {
                         <FormLabel className="max-[500px]:text-sm text-right max-[500px]:text-left font-bold tracking-wide">Username</FormLabel>
 
                         <FormControl className="col-span-3 max-[500px]:col-span-4">
-                            <Input placeholder="Username" {...field} className="bg-light-50 rounded-lg max-[500px]:text-sm placeholder:text-dark-300 !outline-none tracking-wide" />
+                            <Input placeholder="Username" {...field} className="bg-light-50 rounded-lg max-[500px]:text-sm placeholder:text-dark-300 !outline-none" />
                         </FormControl>
 
                         <FormMessage className="col-span-4"/>
@@ -61,7 +61,7 @@ function ProfileForm({ user, handleSetOpen}: Props) {
                         <FormLabel className="max-[500px]:text-sm text-right max-[500px]:text-left font-bold tracking-wide">Email</FormLabel>
 
                         <FormControl className="col-span-3 max-[500px]:col-span-4">
-                            <Input placeholder="Email" {...field} disabled className="bg-light-50 rounded-lg tracking-wide max-[500px]:text-sm placeholder:text-dark-300 !outline-none" />
+                            <Input placeholder="Email" {...field} disabled className="bg-light-50 rounded-lg max-[500px]:text-sm placeholder:text-dark-300 !outline-none" />
                         </FormControl>
 
                         <FormMessage className="col-span-4"/>
@@ -74,7 +74,7 @@ function ProfileForm({ user, handleSetOpen}: Props) {
 
                         <Select onValueChange={field.onChange} value={field.value}>
                             <FormControl>
-                                <SelectTrigger className="max-[500px]:text-sm col-span-3 max-[500px]:col-span-4 rounded-lg tracking-wide bg-light-50 py-1 px-3 transition-colors ease-in-out duration-200 flex gap-4 focus:outline-none">
+                                <SelectTrigger className="max-[500px]:text-sm col-span-3 max-[500px]:col-span-4 rounded-lg bg-light-50 py-1 px-3 transition-colors ease-in-out duration-200 flex gap-4 focus:outline-none">
                                     <SelectValue placeholder="Currency" />
                                 </SelectTrigger>
                             </FormControl>
