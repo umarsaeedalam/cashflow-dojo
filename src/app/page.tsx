@@ -1,4 +1,7 @@
+'use client'
+
 import type { Metadata } from "next"
+import { motion } from "framer-motion"
 import localFont from 'next/font/local'
 import { FaGoogle, FaGithub } from "react-icons/fa"
 import { signInGoogle, signInGithub } from "@/lib/actions"
@@ -8,8 +11,49 @@ const local = localFont({
     display: 'swap',
 })
 
-const metadata: Metadata = {
-    title: 'Welcome | Cashflow Dojo'
+// const metadata: Metadata = {
+//     title: 'Welcome | Cashflow Dojo'
+// }
+
+const titleVariants = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 1.1,
+            delay: 0.5
+        }
+    }
+}
+
+const subtitleVariants = {
+    hidden: {
+        opacity: 0
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 0.6,
+            delay: 1.6
+        }
+    }
+}
+
+const signInVariants = {
+    hidden: {
+        scale: 0,
+    },
+    visible: {
+        scale: 1,
+        transition: {
+            duration: 0.3,
+            delay: 1.6,    
+            type: "spring", 
+            stiffness: 100, 
+          }
+    }
 }
 
 function LoginPage() {
@@ -17,12 +61,26 @@ function LoginPage() {
         <div className="flex h-full items-center max-[550px]:justify-center">
             <div className="flex mx-24 gap-20 max-[1340px]:flex-col max-[1340px]:gap-10 max-[1340px]:mx-16 max-[mx-0]:">
                 <div className="my-auto">
-                    <h1 className={`${local.className} text-dark-900 text-8xl tracking-tighter font-bold max-[1340px]:text-center max-[700px]:text-7xl`}>Cashflow Dojo</h1>
+                    <motion.h1
+                        variants={titleVariants}
+                        initial='hidden'
+                        animate='visible' 
+                        className={`${local.className} text-dark-900 text-8xl tracking-tighter font-bold max-[1340px]:text-center max-[700px]:text-7xl`}
+                    >
+                        Cashflow Dojo
+                    </motion.h1>
 
-                    <p className="text-3xl max-[700px]:text-2xl tracking-tight text-dark-500 font-normal mt-5 max-[1340px]:text-center max-[1340px]:mt-3 max-[550px]:hidden">Analyze your spending with comprehensive categorization and tracking for better financial control.</p>
+                    <motion.p 
+                        variants={subtitleVariants} 
+                        initial='hidden' 
+                        animate='visible' 
+                        className="text-3xl max-[700px]:text-2xl tracking-tight text-dark-500 font-normal mt-5 max-[1340px]:text-center max-[1340px]:mt-3 max-[550px]:hidden"
+                    >
+                            Analyze your spending with comprehensive categorization and tracking for better financial control.
+                    </motion.p>
                 </div>
 
-                <div className="max-w-md font-semibold rounded-3xl bg-white backdrop-filter backdrop-blur-sm bg-opacity-50 text-dark-500 max-[550px]:bg-transparent py-16 max-[1340px]:py-12 max-[700px]:py-8 px-8 max-[700px]:px-5 max-[550px]:px-4 flex flex-col items-center max-[550px]:border-transparent max-[1340px]:self-center">
+                <motion.div variants={subtitleVariants} initial='hidden' animate='visible' className="max-w-md font-semibold rounded-3xl bg-white backdrop-filter backdrop-blur-sm bg-opacity-50 text-dark-500 max-[550px]:bg-transparent py-16 max-[1340px]:py-12 max-[700px]:py-8 px-8 max-[700px]:px-5 max-[550px]:px-4 flex flex-col items-center max-[550px]:border-transparent max-[1340px]:self-center">
                     <h1 className="text-3xl text-dark-700 max-[700px]:text-2xl tracking-tight text-center max-[550px]:hidden">Enter your financial dojo & begin tracking</h1>    
 
                     <form action={signInGoogle}>
@@ -42,7 +100,7 @@ function LoginPage() {
                             <FaGithub className="text-center text-lg max-[700px]:text-base"/>
                         </button>
                     </form>
-                </div>
+                </motion.div>
             </div>
         </div>
     )
@@ -50,4 +108,4 @@ function LoginPage() {
 
 export default LoginPage;
 
-export { metadata }
+// export { metadata }

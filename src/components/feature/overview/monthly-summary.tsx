@@ -31,6 +31,7 @@ function MonthlySummary({ allExpenses, currencySymbol }: Props) {
                 highestSpent={getMonthlyHighestSpentCategory(allExpenses, month)}
                 leastSpent={getMonthlyLeastSpentCategory(allExpenses, month)}
                 symbol={currencySymbol}
+                month={month}
             />
 
             <MonthlyStatistics 

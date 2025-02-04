@@ -457,3 +457,12 @@ export function getLatestExpenses(expenses: Expense[]) {
         .sort((a, b) => b.date.getTime() - a.date.getTime())
         .slice(0, 7)
 }
+
+export function keyState( currentState: number, num: string, str: string, prevNum: string, prevStr: string) {
+    if (num !== prevNum && str === prevStr) {
+      return Math.random();
+    }
+    
+    return currentState;
+}
+  

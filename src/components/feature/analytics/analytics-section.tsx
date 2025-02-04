@@ -35,6 +35,7 @@ function AnalyticsSection({ expenses, currency }: Props) {
                 data={calculateCategoryTotals(expenses, month)}
                 currency={currency}
                 handleCard={setCard}
+                month={month}
             />}
 
             {(card === 2) && <HighestExpensePerCategory

@@ -9,9 +9,10 @@ type Props = {
     data: number[];
     currency: string;
     handleCard: Dispatch<SetStateAction<number>>;
+    month: string;
 }
 
-function MonthlyExpensesPerCategory({ data, currency, handleCard }: Props) {
+function MonthlyExpensesPerCategory({ data, currency, handleCard, }: Props) {
     return (
         <Card className="bg-transparent border-0 shadow-none">
             <CardHeader className="p-0 text-dark-700 text-xl tracking-wide text-center">
